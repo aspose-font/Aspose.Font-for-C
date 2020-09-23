@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Natvis Include="$(MSBuildThisFileDirectory)misc\natvis\aspose_types.natvis" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\WorkingWithCFFFonts\LoadCFFFont.cpp">
+      <Filter>WorkingWithCFFFonts</Filter>
+    </ClCompile>
+    <ClCompile Include="source\WorkingWithCFFFonts\SaveCFFToDisc.cpp">
+      <Filter>WorkingWithCFFFonts</Filter>
+    </ClCompile>
+    <ClCompile Include="source\WorkingWithTrueTypeAndOpenTypeFonts\DetectLatinSymbolsSupport.cpp">
+      <Filter>WorkingWithTrueTypeAndOpenTypeFonts</Filter>
+    </ClCompile>
+    <ClCompile Include="source\WorkingWithTrueTypeAndOpenTypeFonts\ExtractLicenseRestrictions.cpp">
+      <Filter>WorkingWithTrueTypeAndOpenTypeFonts</Filter>
+    </ClCompile>
+    <ClCompile Include="source\WorkingWithTrueTypeAndOpenTypeFonts\GetFontMetrics.cpp">
+      <Filter>WorkingWithTrueTypeAndOpenTypeFonts</Filter>
+    </ClCompile>
+    <ClCompile Include="source\WorkingWithTrueTypeAndOpenTypeFonts\LoadTrueTypeFonts.cpp">
+      <Filter>WorkingWithTrueTypeAndOpenTypeFonts</Filter>
+    </ClCompile>
+    <ClCompile Include="source\WorkingWithTrueTypeAndOpenTypeFonts\RenderingText.cpp">
+      <Filter>WorkingWithTrueTypeAndOpenTypeFonts</Filter>
+    </ClCompile>
+    <ClCompile Include="source\WorkingWithTrueTypeAndOpenTypeFonts\SaveTTFToDisc.cpp">
+      <Filter>WorkingWithTrueTypeAndOpenTypeFonts</Filter>
+    </ClCompile>
+    <ClCompile Include="source\WorkingWithType1Fonts\DetectLatinSymbolsSupport_.cpp">
+      <Filter>WorkingWithType1Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="source\WorkingWithType1Fonts\GetFontMetrics_.cpp">
+      <Filter>WorkingWithType1Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="source\WorkingWithType1Fonts\LoadType1Fonts.cpp">
+      <Filter>WorkingWithType1Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="source\WorkingWithType1Fonts\RenderingText_.cpp">
+      <Filter>WorkingWithType1Fonts</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Licensing\AddLicenseFromFile.cpp">
+      <Filter>Licensing</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Licensing\AddLicenseFromStream.cpp">
+      <Filter>Licensing</Filter>
+    </ClCompile>
+    <ClCompile Include="source\RunExamples.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\Licensing\AddLicenseFromFile.h">
+      <Filter>Licensing</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Licensing\AddLicenseFromStream.h">
+      <Filter>Licensing</Filter>
+    </ClInclude>
+    <ClInclude Include="source\WorkingWithCFFFonts\LoadCFFFont.h">
+      <Filter>WorkingWithCFFFonts</Filter>
+    </ClInclude>
+    <ClInclude Include="source\WorkingWithCFFFonts\SaveCFFToDisc.h">
+      <Filter>WorkingWithCFFFonts</Filter>
+    </ClInclude>
+    <ClInclude Include="source\WorkingWithTrueTypeAndOpenTypeFonts\DetectLatinSymbolsSupport.h">
+      <Filter>WorkingWithTrueTypeAndOpenTypeFonts</Filter>
+    </ClInclude>
+    <ClInclude Include="source\WorkingWithTrueTypeAndOpenTypeFonts\ExtractLicenseRestrictions.h">
+      <Filter>WorkingWithTrueTypeAndOpenTypeFonts</Filter>
+    </ClInclude>
+    <ClInclude Include="source\WorkingWithTrueTypeAndOpenTypeFonts\GetFontMetrics.h">
+      <Filter>WorkingWithTrueTypeAndOpenTypeFonts</Filter>
+    </ClInclude>
+    <ClInclude Include="source\WorkingWithTrueTypeAndOpenTypeFonts\LoadTrueTypeFonts.h">
+      <Filter>WorkingWithTrueTypeAndOpenTypeFonts</Filter>
+    </ClInclude>
+    <ClInclude Include="source\WorkingWithTrueTypeAndOpenTypeFonts\RenderingText.h">
+      <Filter>WorkingWithTrueTypeAndOpenTypeFonts</Filter>
+    </ClInclude>
+    <ClInclude Include="source\WorkingWithTrueTypeAndOpenTypeFonts\SaveTTFToDisc.h">
+      <Filter>WorkingWithTrueTypeAndOpenTypeFonts</Filter>
+    </ClInclude>
+    <ClInclude Include="source\WorkingWithType1Fonts\DetectLatinSymbolsSupport_.h">
+      <Filter>WorkingWithType1Fonts</Filter>
+    </ClInclude>
+    <ClInclude Include="source\WorkingWithType1Fonts\GetFontMetrics_.h">
+      <Filter>WorkingWithType1Fonts</Filter>
+    </ClInclude>
+    <ClInclude Include="source\WorkingWithType1Fonts\LoadType1Fonts.h">
+      <Filter>WorkingWithType1Fonts</Filter>
+    </ClInclude>
+    <ClInclude Include="source\WorkingWithType1Fonts\RenderingText_.h">
+      <Filter>WorkingWithType1Fonts</Filter>
+    </ClInclude>
+    <ClInclude Include="include/stdafx.h" />
+    <ClInclude Include="include/targetver.h" />
+    <ClInclude Include="include\RunExamples.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="../ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Licensing">
+      <UniqueIdentifier>{63ccd287-e79b-4024-9804-9b6080f21d55}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Properties">
+      <UniqueIdentifier>{f7311a41-1249-4bc9-b6c1-88299e6e4c67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="WorkingWithCFFFonts">
+      <UniqueIdentifier>{2d1b2808-5c3c-4587-9fe9-0f67f6236986}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="WorkingWithTrueTypeAndOpenTypeFonts">
+      <UniqueIdentifier>{30aec168-f9c7-441b-9c80-f5699e6b075b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="WorkingWithType1Fonts">
+      <UniqueIdentifier>{79ab3366-4041-4297-a3d6-9cc4d58d3780}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

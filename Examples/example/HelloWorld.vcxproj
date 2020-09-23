@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C5E40D21-7544-4938-91E2-1DED359BB346}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>HelloWorld</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <ProjectName>Aspose.Font.Examples</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug.Static|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug.Static|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug.Static|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ProjectDir)include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_CONSOLE;_DEBUG;DEBUG;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;DISABLE_EXTERNAL_REFCOUNT;GTEST_HAS_PTHREAD=0;BOOST_ALL_NO_LIB;U_STATIC_IMPLEMENTATION;LIBXML_STATIC;LIBXSLT_STATIC;SK_INTERNAL;SK_GAMMA_SRGB;SK_GAMMA_APPLY_TO_A8;SK_SCALAR_TO_FLOAT_EXCLUDED;SK_ALLOW_STATIC_GLOBAL_INITIALIZERS=1;SK_SUPPORT_GPU=0;SK_SUPPORT_OPENCL=0;SK_FORCE_DISTANCE_FIELD_TEXT=0;GR_GL_FUNCTION_TYPE=__stdcall;SK_A32_SHIFT=24;SK_R32_SHIFT=16;SK_G32_SHIFT=8;SK_B32_SHIFT=0;SK_DEVELOPER=1;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
+      <MinimalRebuild>false</MinimalRebuild>
+      <IntrinsicFunctions>false</IntrinsicFunctions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="../ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include/stdafx.h" />
+    <ClInclude Include="include/targetver.h" />
+    <ClCompile Include="source\RunExamples.cpp" />
+    <ClInclude Include="include\RunExamples.h" />
+    <ClCompile Include="source\Licensing\AddLicenseFromFile.cpp" />
+    <ClInclude Include="source\Licensing\AddLicenseFromFile.h" />
+    <ClCompile Include="source\Licensing\AddLicenseFromStream.cpp" />
+    <ClInclude Include="source\Licensing\AddLicenseFromStream.h" />
+    <ClCompile Include="source\WorkingWithCFFFonts\LoadCFFFont.cpp" />
+    <ClInclude Include="source\WorkingWithCFFFonts\LoadCFFFont.h" />
+    <ClCompile Include="source\WorkingWithCFFFonts\SaveCFFToDisc.cpp" />
+    <ClInclude Include="source\WorkingWithCFFFonts\SaveCFFToDisc.h" />
+    <ClCompile Include="source\WorkingWithTrueTypeAndOpenTypeFonts\DetectLatinSymbolsSupport.cpp" />
+    <ClInclude Include="source\WorkingWithTrueTypeAndOpenTypeFonts\DetectLatinSymbolsSupport.h" />
+    <ClCompile Include="source\WorkingWithTrueTypeAndOpenTypeFonts\ExtractLicenseRestrictions.cpp" />
+    <ClInclude Include="source\WorkingWithTrueTypeAndOpenTypeFonts\ExtractLicenseRestrictions.h" />
+    <ClCompile Include="source\WorkingWithTrueTypeAndOpenTypeFonts\GetFontMetrics.cpp" />
+    <ClInclude Include="source\WorkingWithTrueTypeAndOpenTypeFonts\GetFontMetrics.h" />
+    <ClCompile Include="source\WorkingWithTrueTypeAndOpenTypeFonts\LoadTrueTypeFonts.cpp" />
+    <ClInclude Include="source\WorkingWithTrueTypeAndOpenTypeFonts\LoadTrueTypeFonts.h" />
+    <ClCompile Include="source\WorkingWithTrueTypeAndOpenTypeFonts\RenderingText.cpp" />
+    <ClInclude Include="source\WorkingWithTrueTypeAndOpenTypeFonts\RenderingText.h" />
+    <ClCompile Include="source\WorkingWithTrueTypeAndOpenTypeFonts\SaveTTFToDisc.cpp" />
+    <ClInclude Include="source\WorkingWithTrueTypeAndOpenTypeFonts\SaveTTFToDisc.h" />
+    <ClCompile Include="source\WorkingWithType1Fonts\DetectLatinSymbolsSupport_.cpp" />
+    <ClInclude Include="source\WorkingWithType1Fonts\DetectLatinSymbolsSupport_.h" />
+    <ClCompile Include="source\WorkingWithType1Fonts\GetFontMetrics_.cpp" />
+    <ClInclude Include="source\WorkingWithType1Fonts\GetFontMetrics_.h" />
+    <ClCompile Include="source\WorkingWithType1Fonts\LoadType1Fonts.cpp" />
+    <ClInclude Include="source\WorkingWithType1Fonts\LoadType1Fonts.h" />
+    <ClCompile Include="source\WorkingWithType1Fonts\RenderingText_.cpp" />
+    <ClInclude Include="source\WorkingWithType1Fonts\RenderingText_.h" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+  <Import Project="..\aspose.font.cpp.targets" />
+  <Import Project="..\CodePorting.Native.Cs2Cpp_vc14_20.8\CodePorting.Native.Cs2Cpp.API.targets" />
+</Project>
