@@ -3,7 +3,6 @@
 
 #include <system/string.h>
 #include <system/shared_ptr.h>
-#include <system/object.h>
 #include <system/array.h>
 #include <cstdint>
 
@@ -40,7 +39,6 @@ class ASPOSE_FONT_SHARED_CLASS TtfOs2Table : public Aspose::Font::TtfTables::Ttf
     typedef ::System::BaseTypesInfo<BaseType> ThisTypeBaseTypesInfo;
     ASPOSE_FONT_SHARED_RTTI_INFO_DECL();
     
-    FRIEND_FUNCTION_System_MakeObject;
     friend class Aspose::Font::Ttf::TtfFont;
     friend class Aspose::Font::Ttf::TtfFontMetrics;
     friend class Aspose::Font::Ttf::Utils::TTFUtils;
@@ -263,8 +261,12 @@ protected:
     /// <param name="ttfTables">TTF tables repository.</param>
     /// <param name="font">TTF font.</param>
     TtfOs2Table(System::SharedPtr<TtfTableRepository> ttfTables, System::SharedPtr<Aspose::Font::Ttf::TtfFont> font);
+    
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(TtfOs2Table, CODEPORTING_ARGS(System::SharedPtr<TtfTableRepository> ttfTables, System::SharedPtr<Aspose::Font::Ttf::TtfFont> font));
+    
     TtfOs2Table(System::SharedPtr<Aspose::Font::Ttf::Internals::TtfParserContext> context, uint32_t checkSum, uint32_t offset, uint32_t length);
     
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(TtfOs2Table, CODEPORTING_ARGS(System::SharedPtr<Aspose::Font::Ttf::Internals::TtfParserContext> context, uint32_t checkSum, uint32_t offset, uint32_t length));
     void AdaptValuesOS2Table(int16_t ascend);
     void SetFirstCharIndex(uint16_t value);
     void SetLastCharIndex(uint16_t value);

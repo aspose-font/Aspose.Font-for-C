@@ -32,7 +32,6 @@ class ASPOSE_FONT_SHARED_CLASS CffEncoding : public Aspose::Font::IFontEncoding,
     typedef ::System::BaseTypesInfo<BaseType, BaseType1> ThisTypeBaseTypesInfo;
     ASPOSE_FONT_SHARED_RTTI_INFO_DECL();
     
-    FRIEND_FUNCTION_System_MakeObject;
     friend class Aspose::Font::Cff::CffFont;
     friend class Aspose::Font::Tests::FunctionalTests::CFF_Common;
     
@@ -114,13 +113,14 @@ protected:
     
     CffEncoding(System::SharedPtr<CffFont> font);
     
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(CffEncoding, CODEPORTING_ARGS(System::SharedPtr<CffFont> font));
     ASPOSE_FONT_SHARED_API System::Object::shared_members_type GetSharedMembers() override;
     
 private:
 
     bool useStandardEncoding;
     System::SharedPtr<System::Collections::Generic::List<System::SharedPtr<CffEncoding>>> encodingDictionary;
-    System::SharedPtr<CffFont> font;
+    System::WeakPtr<CffFont> font;
     static const int32_t maxStandardStringsIndex;
     System::SharedPtr<NameToCodeMap> nameToCodeIndex;
     System::SharedPtr<NameToCodeMap> nameToGidIndex;

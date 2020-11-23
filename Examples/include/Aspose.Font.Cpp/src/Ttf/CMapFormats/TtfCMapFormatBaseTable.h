@@ -42,7 +42,6 @@ class ASPOSE_FONT_SHARED_CLASS TtfCMapFormatBaseTable : public System::Object
     typedef ::System::BaseTypesInfo<BaseType> ThisTypeBaseTypesInfo;
     ASPOSE_FONT_SHARED_RTTI_INFO_DECL();
     
-    FRIEND_FUNCTION_System_MakeObject;
     friend class Aspose::Font::TtfCMapFormats::TtfCMapFormat0Table;
     friend class Aspose::Font::TtfCMapFormats::TtfCMapFormat10Table;
     friend class Aspose::Font::TtfCMapFormats::TtfCMapFormat12Table;
@@ -99,8 +98,12 @@ protected:
     bool get_IsUnicodeEncoding();
     
     TtfCMapFormatBaseTable(System::SharedPtr<Aspose::Font::TtfTables::TtfCMapTable> baseTable);
+    
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(TtfCMapFormatBaseTable, CODEPORTING_ARGS(System::SharedPtr<Aspose::Font::TtfTables::TtfCMapTable> baseTable));
+    
     TtfCMapFormatBaseTable(uint16_t platformId, uint16_t platformSpecificId, System::SharedPtr<Aspose::Font::TtfTables::TtfCMapTable> baseTable);
     
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(TtfCMapFormatBaseTable, CODEPORTING_ARGS(uint16_t platformId, uint16_t platformSpecificId, System::SharedPtr<Aspose::Font::TtfTables::TtfCMapTable> baseTable));
     /// <summary>
     /// Loads current table
     /// </summary>
@@ -133,7 +136,7 @@ private:
 
     uint16_t platformId;
     uint16_t platformSpecificId;
-    System::SharedPtr<Aspose::Font::TtfTables::TtfCMapTable> baseTable;
+    System::WeakPtr<Aspose::Font::TtfTables::TtfCMapTable> baseTable;
     
 };
 

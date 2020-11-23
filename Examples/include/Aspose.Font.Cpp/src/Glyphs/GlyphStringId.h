@@ -21,8 +21,6 @@ class ASPOSE_FONT_SHARED_CLASS GlyphStringId : public Aspose::Font::Glyphs::Glyp
     typedef ::System::BaseTypesInfo<BaseType> ThisTypeBaseTypesInfo;
     ASPOSE_FONT_SHARED_RTTI_INFO_DECL();
     
-    FRIEND_FUNCTION_System_MakeObject;
-    
 public:
 
     /// <summary>
@@ -61,11 +59,10 @@ public:
 private:
 
     System::String value;
-    
     /// <summary>
     /// Notdef value.
     /// </summary>
-    static System::SharedPtr<GlyphStringId>& notDefId();
+    static System::SharedPtr<GlyphStringId> notDefId;
     
     static struct __StaticConstructor__ { __StaticConstructor__(); } s_constructor__;
     

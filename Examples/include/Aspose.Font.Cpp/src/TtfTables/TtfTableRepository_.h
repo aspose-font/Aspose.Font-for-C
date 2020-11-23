@@ -74,7 +74,6 @@ class ASPOSE_FONT_SHARED_CLASS TtfTableRepository : public System::Object
     typedef ::System::BaseTypesInfo<BaseType> ThisTypeBaseTypesInfo;
     ASPOSE_FONT_SHARED_RTTI_INFO_DECL();
     
-    FRIEND_FUNCTION_System_MakeObject;
     friend class Aspose::Font::Font;
     friend class Aspose::Font::Otl::AdvancedTypographicTables::OtlGlyphsPositioner;
     friend class Aspose::Font::Otl::AdvancedTypographicTables::TextScriptDetector;
@@ -311,6 +310,8 @@ private:
     /// Constructor
     /// </summary>
     TtfTableRepository();
+    
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(TtfTableRepository, CODEPORTING_ARGS());
     
 };
 

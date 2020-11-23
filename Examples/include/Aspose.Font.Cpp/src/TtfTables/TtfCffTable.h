@@ -3,7 +3,6 @@
 
 #include <system/string.h>
 #include <system/shared_ptr.h>
-#include <system/object.h>
 #include <cstdint>
 
 #include "Aspose.Font.Cpp/src/TtfTables/TtfTableBase.h"
@@ -32,7 +31,6 @@ class ASPOSE_FONT_SHARED_CLASS TtfCffTable : public Aspose::Font::TtfTables::Ttf
     typedef ::System::BaseTypesInfo<BaseType> ThisTypeBaseTypesInfo;
     ASPOSE_FONT_SHARED_RTTI_INFO_DECL();
     
-    FRIEND_FUNCTION_System_MakeObject;
     friend class Aspose::Font::Ttf::Internals::Parsing::PdfOpenTypeFontParser;
     friend class Aspose::Font::Ttf::TtfFont;
     
@@ -61,6 +59,7 @@ protected:
     
     TtfCffTable(System::SharedPtr<Aspose::Font::Ttf::Internals::TtfParserContext> context, uint32_t checkSum, uint32_t offset, uint32_t length);
     
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(TtfCffTable, CODEPORTING_ARGS(System::SharedPtr<Aspose::Font::Ttf::Internals::TtfParserContext> context, uint32_t checkSum, uint32_t offset, uint32_t length));
     ASPOSE_FONT_SHARED_API void Load(System::SharedPtr<Aspose::Font::Ttf::Internals::Parsing::TTFFileReader> ttfReader) override;
     ASPOSE_FONT_SHARED_API void LazyLoadImpl(System::SharedPtr<Aspose::Font::Ttf::Internals::Parsing::TTFFileReader> ttfReader) override;
     ASPOSE_FONT_SHARED_API System::Object::shared_members_type GetSharedMembers() override;

@@ -8,14 +8,24 @@
 
     #if defined(_MSC_VER)
 
-        #if defined(ASPOSE_FONT_SHARED_EXPORTS)
-            #define ASPOSE_FONT_SHARED_API __declspec(dllexport)
+        #if true
+            #if defined(ASPOSE_FONT_SHARED_EXPORTS)
+                #define ASPOSE_FONT_SHARED_API __declspec(dllexport)
+            #else
+                #define ASPOSE_FONT_SHARED_API __declspec(dllimport)
+            #endif
+            #define ASPOSE_FONT_SHARED_CLASS
         #else
-            #define ASPOSE_FONT_SHARED_API __declspec(dllimport)
+            #if defined(ASPOSE_FONT_SHARED_EXPORTS)
+                #define ASPOSE_FONT_SHARED_CLASS __declspec(dllexport)
+                #define ASPOSE_FONT_SHARED_API __declspec(dllexport)
+            #else
+                #define ASPOSE_FONT_SHARED_CLASS __declspec(dllimport)
+                #define ASPOSE_FONT_SHARED_API __declspec(dllimport)
+            #endif
         #endif
 
         #define ASPOSE_FONT_LOCAL_API
-        #define ASPOSE_FONT_SHARED_CLASS
         #define ASPOSE_FONT_SHARED_RTTI_INFO_DECL() RTTI_INFO_DECL_EX(ASPOSE_FONT_SHARED_API)
 
     #elif defined(__GNUC__)

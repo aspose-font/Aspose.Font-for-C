@@ -28,7 +28,6 @@ class ASPOSE_FONT_SHARED_CLASS CompositeGlyphComponent : public System::Object
     typedef ::System::BaseTypesInfo<BaseType> ThisTypeBaseTypesInfo;
     ASPOSE_FONT_SHARED_RTTI_INFO_DECL();
     
-    FRIEND_FUNCTION_System_MakeObject;
     friend class Aspose::Font::TtfTables::TtfGlyfTable;
     
 public:
@@ -53,6 +52,7 @@ protected:
     /// <param name="componentMatrix">Component matrix.</param>                
     CompositeGlyphComponent(System::SharedPtr<Aspose::Font::Glyphs::Glyph> glyph, System::SharedPtr<TransformationMatrix> componentMatrix);
     
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(CompositeGlyphComponent, CODEPORTING_ARGS(System::SharedPtr<Aspose::Font::Glyphs::Glyph> glyph, System::SharedPtr<TransformationMatrix> componentMatrix));
     ASPOSE_FONT_SHARED_API System::Object::shared_members_type GetSharedMembers() override;
     
 private:

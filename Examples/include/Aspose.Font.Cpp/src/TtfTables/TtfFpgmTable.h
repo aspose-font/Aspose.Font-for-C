@@ -37,7 +37,6 @@ class ASPOSE_FONT_SHARED_CLASS TtfFpgmTable : public Aspose::Font::TtfTables::Tt
     typedef ::System::BaseTypesInfo<BaseType> ThisTypeBaseTypesInfo;
     ASPOSE_FONT_SHARED_RTTI_INFO_DECL();
     
-    FRIEND_FUNCTION_System_MakeObject;
     friend class Aspose::Font::Ttf::Internals::Bytecode::BytecodeInterpreter;
     friend class Aspose::Font::Ttf::TTFFontSaver;
     friend class Aspose::Font::Ttf::TtfFont;
@@ -74,8 +73,12 @@ protected:
     System::SharedPtr<Aspose::Font::Ttf::Internals::Bytecode::Subroutines> get_Subroutines();
     
     TtfFpgmTable(System::SharedPtr<TtfTableRepository> ttfTables, System::SharedPtr<Aspose::Font::Ttf::TtfFont> font);
+    
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(TtfFpgmTable, CODEPORTING_ARGS(System::SharedPtr<TtfTableRepository> ttfTables, System::SharedPtr<Aspose::Font::Ttf::TtfFont> font));
+    
     TtfFpgmTable(System::SharedPtr<Aspose::Font::Ttf::Internals::TtfParserContext> context, uint32_t checkSum, uint32_t offset, uint32_t length);
     
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(TtfFpgmTable, CODEPORTING_ARGS(System::SharedPtr<Aspose::Font::Ttf::Internals::TtfParserContext> context, uint32_t checkSum, uint32_t offset, uint32_t length));
     ASPOSE_FONT_SHARED_API void Load(System::SharedPtr<Aspose::Font::Ttf::Internals::Parsing::TTFFileReader> ttfReader) override;
     ASPOSE_FONT_SHARED_API void LazyLoadImpl(System::SharedPtr<Aspose::Font::Ttf::Internals::Parsing::TTFFileReader> ttfReader) override;
     ASPOSE_FONT_SHARED_API void Save(System::ArrayPtr<uint8_t>& tableBytes, uint32_t& length, uint32_t& checksum) override;

@@ -23,6 +23,7 @@ namespace Aspose {
 namespace Font {
 
 /// <summary>
+/// Declares common functionality for all font formats.
 /// Implemented by Font classes.
 /// </summary>
 class ASPOSE_FONT_SHARED_CLASS IFont : public virtual System::Object
@@ -41,23 +42,36 @@ public:
     /// <example>Type1, TrueType etc</example>
     virtual Aspose::Font::FontType get_FontType() = 0;
     /// <summary>
-    /// Gets Font style.
+    /// Gets or Sets Font style.
     /// This is a raw string value provided by Font file.
     /// </summary>
     virtual System::String get_Style() = 0;
+    /// <summary>
+    /// Gets or Sets Font style.
+    /// This is a raw string value provided by Font file.
+    /// </summary>
+    virtual void set_Style(System::String value) = 0;
     /// <summary>
     /// Gets Font style.
     /// This is a value computed and represented in generalized type.
     /// </summary>
     virtual Aspose::Font::FontStyle get_FontStyle() = 0;
     /// <summary>
-    /// Gets Font family.
+    /// Gets or Sets Font family.
     /// </summary>
     virtual System::String get_FontFamily() = 0;
     /// <summary>
-    /// Gets Font face name.
+    /// Gets or Sets Font family.
+    /// </summary>
+    virtual void set_FontFamily(System::String value) = 0;
+    /// <summary>
+    /// Gets or Sets Font face name.
     /// </summary>
     virtual System::String get_FontName() = 0;
+    /// <summary>
+    /// Gets or Sets Font face name.
+    /// </summary>
+    virtual void set_FontName(System::String value) = 0;
     /// <summary>
     /// Gets Font names.
     /// </summary>

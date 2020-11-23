@@ -2,7 +2,6 @@
 // Copyright (c) 2001-2020 Aspose Pty Ltd. All Rights Reserved.
 
 #include <system/shared_ptr.h>
-#include <system/object.h>
 #include <system/collections/list.h>
 #include <system/array.h>
 #include <cstdint>
@@ -30,7 +29,6 @@ class ASPOSE_FONT_SHARED_CLASS TtfCMapFormat0Table : public Aspose::Font::TtfCMa
     typedef ::System::BaseTypesInfo<BaseType> ThisTypeBaseTypesInfo;
     ASPOSE_FONT_SHARED_RTTI_INFO_DECL();
     
-    FRIEND_FUNCTION_System_MakeObject;
     friend class Aspose::Font::TtfTables::TtfCMapTable;
     
 public:
@@ -51,6 +49,7 @@ protected:
 
     TtfCMapFormat0Table(uint16_t platformId, uint16_t platformSpecificId, System::SharedPtr<Aspose::Font::TtfTables::TtfCMapTable> baseTable);
     
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(TtfCMapFormat0Table, CODEPORTING_ARGS(uint16_t platformId, uint16_t platformSpecificId, System::SharedPtr<Aspose::Font::TtfTables::TtfCMapTable> baseTable));
     ASPOSE_FONT_SHARED_API void Load(System::SharedPtr<Aspose::Font::Ttf::Internals::Parsing::TTFFileReader> ttfReader) override;
     /// <summary>
     /// Saves the table.

@@ -4,6 +4,7 @@
 #include <system/shared_ptr.h>
 #include <system/multicast_delegate.h>
 #include <system/eventargs.h>
+#include <system/details/pointer_collection_helpers.h>
 #include <system/collections/list.h>
 
 #include "Aspose.Font.Cpp/src/Glyphs/GlyphId.h"
@@ -35,7 +36,6 @@ class ASPOSE_FONT_SHARED_CLASS GlyphIdList : public System::Collections::Generic
     typedef ::System::BaseTypesInfo<BaseType> ThisTypeBaseTypesInfo;
     ASPOSE_FONT_SHARED_RTTI_INFO_DECL();
     
-    FRIEND_FUNCTION_System_MakeObject;
     friend class Aspose::Font::Cff::CFFFontSubset;
     friend class Aspose::Font::Ttf::TTFSubsetSaver;
     friend class Aspose::Font::Ttf::TTFFontSubset;
@@ -71,13 +71,17 @@ public:
     /// <param name="index">index of glyph in list</param>
     ASPOSE_FONT_SHARED_API System::SharedPtr<GlyphId> idx_get(int32_t index) const override;
     
+    ASPOSE_FONT_SHARED_API void SetTemplateWeakPtr(unsigned int argument) override;
+    
 protected:
 
-    System::SharedPtr<System::Collections::Generic::List<System::SharedPtr<IGlyphAddedCallback>>> GlyphAddedCallbacks;
-    System::SharedPtr<System::Collections::Generic::List<System::SharedPtr<IGlyphRemovedCallback>>> GlyphRemovedCallbacks;
-    System::SharedPtr<System::Collections::Generic::List<System::SharedPtr<IGlyphListClearedCallback>>> GlyphListClearedCallbacks;
+    System::DynamicWeakPtr<System::Collections::Generic::List<System::SharedPtr<IGlyphAddedCallback>>, System::SmartPtrMode::Shared, 0> GlyphAddedCallbacks;
+    System::DynamicWeakPtr<System::Collections::Generic::List<System::SharedPtr<IGlyphRemovedCallback>>, System::SmartPtrMode::Shared, 0> GlyphRemovedCallbacks;
+    System::DynamicWeakPtr<System::Collections::Generic::List<System::SharedPtr<IGlyphListClearedCallback>>, System::SmartPtrMode::Shared, 0> GlyphListClearedCallbacks;
     
     GlyphIdList();
+    
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(GlyphIdList, CODEPORTING_ARGS());
     
     virtual ASPOSE_FONT_SHARED_API ~GlyphIdList();
     

@@ -2,6 +2,7 @@
 // Copyright (c) 2001-2020 Aspose Pty Ltd. All Rights Reserved.
 
 #include <system/shared_ptr.h>
+#include <system/details/pointer_collection_helpers.h>
 #include <system/collections/list.h>
 
 #include "Aspose.Font.Cpp/src/Glyphs/CompositeGlyphComponent.h"
@@ -26,8 +27,11 @@ class ASPOSE_FONT_SHARED_CLASS CompositeGlyphComponentList : public System::Coll
     typedef ::System::BaseTypesInfo<BaseType> ThisTypeBaseTypesInfo;
     ASPOSE_FONT_SHARED_RTTI_INFO_DECL();
     
-    FRIEND_FUNCTION_System_MakeObject;
     friend class Aspose::Font::Glyphs::CompositeGlyph;
+    
+public:
+
+    ASPOSE_FONT_SHARED_API void SetTemplateWeakPtr(unsigned int argument) override;
     
 protected:
 
@@ -35,6 +39,8 @@ protected:
     /// Constructor of the new glyph components list object.
     /// </summary>
     CompositeGlyphComponentList();
+    
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(CompositeGlyphComponentList, CODEPORTING_ARGS());
     
     virtual ASPOSE_FONT_SHARED_API ~CompositeGlyphComponentList();
     

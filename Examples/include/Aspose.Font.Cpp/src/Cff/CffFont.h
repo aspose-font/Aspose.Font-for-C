@@ -41,7 +41,7 @@ namespace Font {
 namespace Cff {
 
 /// <summary>
-/// Represents CFF Font.
+/// Represents Compact Font Format (CFF).
 /// </summary>
 class ASPOSE_FONT_SHARED_CLASS CffFont : public Aspose::Font::Font
 {
@@ -51,7 +51,6 @@ class ASPOSE_FONT_SHARED_CLASS CffFont : public Aspose::Font::Font
     typedef ::System::BaseTypesInfo<BaseType> ThisTypeBaseTypesInfo;
     ASPOSE_FONT_SHARED_RTTI_INFO_DECL();
     
-    FRIEND_FUNCTION_System_MakeObject;
     friend class Aspose::Font::Cff::CFFFontParser;
     friend class Aspose::Font::Cff::CffEncoding;
     friend class Aspose::Font::Cff::Internals::Parsing::CFFCharsetParser;
@@ -78,12 +77,24 @@ public:
     ASPOSE_FONT_SHARED_API Aspose::Font::FontType get_FontType() override;
     /// <summary>
     /// Gets Font family.
+    /// The Font family setter is not implemented yet.
     /// </summary>
     ASPOSE_FONT_SHARED_API System::String get_FontFamily() override;
     /// <summary>
-    /// Gets Font name.
+    /// Gets Font family.
+    /// The Font family setter is not implemented yet.
+    /// </summary>
+    ASPOSE_FONT_SHARED_API void set_FontFamily(System::String value) override;
+    /// <summary>
+    /// Gets Font face name.
+    /// The Font face name setter is not implemented yet.
     /// </summary>
     ASPOSE_FONT_SHARED_API System::String get_FontName() override;
+    /// <summary>
+    /// Gets Font face name.
+    /// The Font face name setter is not implemented yet.
+    /// </summary>
+    ASPOSE_FONT_SHARED_API void set_FontName(System::String value) override;
     /// <summary>
     /// Get Font names.
     /// </summary>
@@ -95,8 +106,15 @@ public:
     /// <summary>
     /// Gets Font style.
     /// This is a raw string value provided by Font file.
+    /// The Style setter is not implemented yet.
     /// </summary>
     ASPOSE_FONT_SHARED_API System::String get_Style() override;
+    /// <summary>
+    /// Gets Font style.
+    /// This is a raw string value provided by Font file.
+    /// The Style setter is not implemented yet.
+    /// </summary>
+    ASPOSE_FONT_SHARED_API void set_Style(System::String value) override;
     /// <summary>
     /// Gets Font style.
     /// This is a value computed and represented in generalized type.
@@ -176,14 +194,6 @@ protected:
     /// </summary>
     System::SharedPtr<System::Collections::Generic::List<int32_t>> get_SeacSequence() const;
     /// <summary>
-    /// Gets Font family.
-    /// </summary>
-    ASPOSE_FONT_SHARED_API void set_FontFamily(System::String value) override;
-    /// <summary>
-    /// Gets Font name.
-    /// </summary>
-    ASPOSE_FONT_SHARED_API void set_FontName(System::String value) override;
-    /// <summary>
     /// Get Font names.
     /// </summary>
     ASPOSE_FONT_SHARED_API void set_FontNames(System::SharedPtr<MultiLanguageString> value) override;
@@ -191,11 +201,6 @@ protected:
     /// Gets postscript Font names.
     /// </summary>
     ASPOSE_FONT_SHARED_API void set_PostscriptNames(System::SharedPtr<MultiLanguageString> value) override;
-    /// <summary>
-    /// Gets Font style.
-    /// This is a raw string value provided by Font file.
-    /// </summary>
-    ASPOSE_FONT_SHARED_API void set_Style(System::String value) override;
     
     /// <summary>
     /// Internal constructor.
@@ -203,6 +208,22 @@ protected:
     /// </summary>
     CffFont(System::SharedPtr<Aspose::Font::Sources::FontDefinition> fontDefinition);
     
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(CffFont, CODEPORTING_ARGS(System::SharedPtr<Aspose::Font::Sources::FontDefinition> fontDefinition));
+    /// <summary>
+    /// Internal Font family setter.
+    /// </summary>
+    /// <param name="value">New Font family.</param>
+    void SetFontFamilyInternally(System::String value);
+    /// <summary>
+    /// Internal Font face name setter.
+    /// </summary>
+    /// <param name="value">New Font face name.</param>
+    void SetFontNameInternally(System::String value);
+    /// <summary>
+    /// Internal Style setter.
+    /// </summary>
+    /// <param name="value">New Style.</param>
+    void SetStyleInternally(System::String value);
     /// <summary>
     /// Creates font subset.
     /// </summary>

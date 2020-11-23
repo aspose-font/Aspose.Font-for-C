@@ -28,7 +28,6 @@ class ASPOSE_FONT_SHARED_CLASS TtfFontMetrics : public Aspose::Font::FontMetrics
     typedef ::System::BaseTypesInfo<BaseType> ThisTypeBaseTypesInfo;
     ASPOSE_FONT_SHARED_RTTI_INFO_DECL();
     
-    FRIEND_FUNCTION_System_MakeObject;
     friend class Aspose::Font::Ttf::TtfFont;
     friend class Aspose::Font::TtfTables::TtfKernTable;
     
@@ -116,6 +115,7 @@ protected:
 
     TtfFontMetrics(System::SharedPtr<TtfFont> owner);
     
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(TtfFontMetrics, CODEPORTING_ARGS(System::SharedPtr<TtfFont> owner));
     /// @deprecated please use TtfFont.Encoding.DecodeToGlyphId(char unicode) => GetGlyphWidth(glyphId) instead
     double GetCharWidth(char16_t ch);
     ASPOSE_FONT_SHARED_API int32_t GetGlyphIdHashCode(System::SharedPtr<Aspose::Font::Glyphs::GlyphId> glyphId) override;
@@ -123,14 +123,14 @@ protected:
     
 private:
 
-    System::SharedPtr<Aspose::Font::TtfTables::TtfTableRepository> _ttfTables;
+    System::WeakPtr<Aspose::Font::TtfTables::TtfTableRepository> _ttfTables;
     System::SharedPtr<Aspose::Font::FontBBox> fontBBox;
     System::SharedPtr<TransformationMatrix> _fontMatrix;
     System::SharedPtr<System::Object> initSync;
     System::SharedPtr<System::Object> initSync2;
     /// @deprecated please use TtfFont.Encoding.DecodeToGlyphId(char unicode) => GetGlyphWidth(glyphId) instead
     System::SharedPtr<Aspose::Font::TtfCMapFormats::TtfCMapFormatBaseTable> _mapTable;
-    System::SharedPtr<TtfFont> _owner;
+    System::WeakPtr<TtfFont> _owner;
     
 };
 

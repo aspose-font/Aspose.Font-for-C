@@ -3,7 +3,6 @@
 
 #include <system/string.h>
 #include <system/shared_ptr.h>
-#include <system/object.h>
 #include <system/enum_helpers.h>
 #include <system/date_time.h>
 #include <system/array.h>
@@ -39,7 +38,6 @@ class ASPOSE_FONT_SHARED_CLASS TtfHeadTable : public Aspose::Font::TtfTables::Tt
     typedef ::System::BaseTypesInfo<BaseType> ThisTypeBaseTypesInfo;
     ASPOSE_FONT_SHARED_RTTI_INFO_DECL();
     
-    FRIEND_FUNCTION_System_MakeObject;
     friend class Aspose::Font::Ttf::Internals::Bytecode::BytecodeInterpreter;
     friend class Aspose::Font::Ttf::TTFFontSaver;
     friend class Aspose::Font::Ttf::TtfFont;
@@ -204,8 +202,12 @@ protected:
     int64_t checkSumPosition;
     
     TtfHeadTable(System::SharedPtr<TtfTableRepository> ttfTables, System::SharedPtr<Aspose::Font::Ttf::TtfFont> font);
+    
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(TtfHeadTable, CODEPORTING_ARGS(System::SharedPtr<TtfTableRepository> ttfTables, System::SharedPtr<Aspose::Font::Ttf::TtfFont> font));
+    
     TtfHeadTable(System::SharedPtr<Aspose::Font::Ttf::Internals::TtfParserContext> context, uint32_t checkSum, uint32_t offset, uint32_t length);
     
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(TtfHeadTable, CODEPORTING_ARGS(System::SharedPtr<Aspose::Font::Ttf::Internals::TtfParserContext> context, uint32_t checkSum, uint32_t offset, uint32_t length));
     ASPOSE_FONT_SHARED_API void Load(System::SharedPtr<Aspose::Font::Ttf::Internals::Parsing::TTFFileReader> ttfReader) override;
     ASPOSE_FONT_SHARED_API void Save(System::ArrayPtr<uint8_t>& tableBytes, uint32_t& length, uint32_t& checksum) override;
     ASPOSE_FONT_SHARED_API System::Object::shared_members_type GetSharedMembers() override;

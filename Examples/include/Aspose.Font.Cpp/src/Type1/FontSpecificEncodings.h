@@ -30,7 +30,6 @@ class ASPOSE_FONT_SHARED_CLASS FontSpecificEncodings : public System::Object
     typedef ::System::BaseTypesInfo<BaseType> ThisTypeBaseTypesInfo;
     ASPOSE_FONT_SHARED_RTTI_INFO_DECL();
     
-    FRIEND_FUNCTION_System_MakeObject;
     friend class Aspose::Font::FontEnvironment;
     friend class Aspose::Font::Type1::Type1FontParser;
     
@@ -47,6 +46,7 @@ protected:
 
     FontSpecificEncodings();
     
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(FontSpecificEncodings, CODEPORTING_ARGS());
     System::SharedPtr<Internals::EncodingArray> GetEncoding(System::String fontName);
     ASPOSE_FONT_SHARED_API System::Object::shared_members_type GetSharedMembers() override;
     

@@ -28,8 +28,6 @@ class ASPOSE_FONT_SHARED_CLASS FontFileDefinition : public System::Object
     typedef ::System::BaseTypesInfo<BaseType> ThisTypeBaseTypesInfo;
     ASPOSE_FONT_SHARED_RTTI_INFO_DECL();
     
-    FRIEND_FUNCTION_System_MakeObject;
-    
 public:
 
     /// <summary>
@@ -91,6 +89,9 @@ private:
     /// <param name="fileExtension">Font file extension.</param>
     /// <param name="streamSource">Font stream source.</param>
     FontFileDefinition(System::String fileName, System::String fileExtension, System::SharedPtr<Aspose::Font::Sources::StreamSource> streamSource);
+    
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(FontFileDefinition, CODEPORTING_ARGS(System::String fileName, System::String fileExtension, System::SharedPtr<Aspose::Font::Sources::StreamSource> streamSource));
+    
     /// <summary>
     /// Creates a file definition using font name. font extension, font file content and offset.
     /// </summary>
@@ -99,6 +100,8 @@ private:
     /// <param name="streamSource">Font stream source.</param>
     /// <param name="offset">Offset to font data in stream source.</param>
     FontFileDefinition(System::String fileName, System::String fileExtension, System::SharedPtr<Aspose::Font::Sources::StreamSource> streamSource, int64_t offset);
+    
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(FontFileDefinition, CODEPORTING_ARGS(System::String fileName, System::String fileExtension, System::SharedPtr<Aspose::Font::Sources::StreamSource> streamSource, int64_t offset));
     
 };
 

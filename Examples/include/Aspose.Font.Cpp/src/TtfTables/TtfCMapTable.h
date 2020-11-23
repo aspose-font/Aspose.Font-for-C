@@ -18,6 +18,7 @@ namespace Aspose { namespace Font { namespace Tests { namespace FunctionalTests 
 namespace Aspose { namespace Pdf { namespace Engine { namespace CommonData { namespace PageContent { namespace Operators { namespace TextShowing { class ShowTextBase; } } } } } } }
 namespace Aspose { namespace Pdf { namespace Engine { namespace IO { namespace ConvertStrategies { namespace PdfUa { class PdfUaFontEncodingMappingChecker; } } } } } }
 namespace Aspose { namespace Pdf { namespace Engine { namespace IO { namespace ConvertStrategies { namespace ConvertHelpers { class SymbolicFontEncodingsFixer; } } } } } }
+namespace Aspose { namespace Page { namespace EPS { namespace Postscript { class DefineFont; } } } }
 namespace Aspose { namespace Font { namespace TtfCMapFormats { class TtfCMapFormatBaseTable; } } }
 namespace Aspose { namespace Font { namespace TtfTables { class TtfTableRepository; } } }
 namespace Aspose { namespace Font { namespace Ttf { namespace Internals { class TtfParserContext; } } } }
@@ -45,13 +46,13 @@ private:
 
     class TableDescriptor;
     
-    FRIEND_FUNCTION_System_MakeObject;
     friend class Aspose::Font::Ttf::TtfFont;
     friend class Aspose::Font::Ttf::TtfEncoding;
     friend class Aspose::Font::Tests::FunctionalTests::TTF_Common;
     friend class Aspose::Pdf::Engine::CommonData::PageContent::Operators::TextShowing::ShowTextBase;
     friend class Aspose::Pdf::Engine::IO::ConvertStrategies::PdfUa::PdfUaFontEncodingMappingChecker;
     friend class Aspose::Pdf::Engine::IO::ConvertStrategies::ConvertHelpers::SymbolicFontEncodingsFixer;
+    friend class Aspose::Page::EPS::Postscript::DefineFont;
     
 public:
 
@@ -66,7 +67,6 @@ public:
         typedef ::System::BaseTypesInfo<BaseType> ThisTypeBaseTypesInfo;
         ASPOSE_FONT_SHARED_RTTI_INFO_DECL();
         
-        FRIEND_FUNCTION_System_MakeObject;
         friend class Aspose::Font::TtfTables::TtfCMapTable;
         
     public:
@@ -165,6 +165,7 @@ protected:
     /// <param name="font">TTF font.</param>
     TtfCMapTable(System::SharedPtr<TtfTableRepository> ttfTables, System::SharedPtr<Aspose::Font::Ttf::TtfFont> font);
     
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(TtfCMapTable, CODEPORTING_ARGS(System::SharedPtr<TtfTableRepository> ttfTables, System::SharedPtr<Aspose::Font::Ttf::TtfFont> font));
     /// <summary>
     /// Adds new subtable to cmap table.
     /// </summary>
@@ -175,6 +176,7 @@ protected:
     
     TtfCMapTable(System::SharedPtr<Aspose::Font::Ttf::Internals::TtfParserContext> context, uint32_t checkSum, uint32_t offset, uint32_t length);
     
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(TtfCMapTable, CODEPORTING_ARGS(System::SharedPtr<Aspose::Font::Ttf::Internals::TtfParserContext> context, uint32_t checkSum, uint32_t offset, uint32_t length));
     ASPOSE_FONT_SHARED_API void Load(System::SharedPtr<Aspose::Font::Ttf::Internals::Parsing::TTFFileReader> ttfReader) override;
     ASPOSE_FONT_SHARED_API void LazyLoadImpl(System::SharedPtr<Aspose::Font::Ttf::Internals::Parsing::TTFFileReader> ttfReader) override;
     /// <summary>

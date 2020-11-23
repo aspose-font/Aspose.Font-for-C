@@ -3,7 +3,6 @@
 
 #include <system/string.h>
 #include <system/shared_ptr.h>
-#include <system/object.h>
 #include <system/collections/sorted_dictionary.h>
 #include <system/collections/dictionary.h>
 #include <system/array.h>
@@ -35,7 +34,6 @@ class ASPOSE_FONT_SHARED_CLASS TtfPostTable : public Aspose::Font::TtfTables::Tt
     typedef ::System::BaseTypesInfo<BaseType> ThisTypeBaseTypesInfo;
     ASPOSE_FONT_SHARED_RTTI_INFO_DECL();
     
-    FRIEND_FUNCTION_System_MakeObject;
     friend class Aspose::Font::Ttf::TtfFont;
     friend class Aspose::Page::EPS::Postscript::DefineFont;
     
@@ -114,7 +112,13 @@ protected:
     ASPOSE_FONT_SHARED_API void set_ItalicAngle(float value);
     
     TtfPostTable(System::SharedPtr<TtfTableRepository> ttfTables, System::SharedPtr<Aspose::Font::Ttf::TtfFont> font);
+    
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(TtfPostTable, CODEPORTING_ARGS(System::SharedPtr<TtfTableRepository> ttfTables, System::SharedPtr<Aspose::Font::Ttf::TtfFont> font));
+    
     TtfPostTable(System::SharedPtr<Aspose::Font::Ttf::Internals::TtfParserContext> context, uint32_t checkSum, uint32_t offset, uint32_t length);
+    
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(TtfPostTable, CODEPORTING_ARGS(System::SharedPtr<Aspose::Font::Ttf::Internals::TtfParserContext> context, uint32_t checkSum, uint32_t offset, uint32_t length));
+    
     /// <summary>
     /// Initializes a new instance of the <see cref="TtfPostTable"></see> class.
     /// </summary>
@@ -123,6 +127,7 @@ protected:
     /// <param name="glyphToIndex">The dictionary that contains correspondence between the name of glyph and index in loca table.</param>
     TtfPostTable(System::SharedPtr<TtfTableRepository> ttfTables, System::SharedPtr<Aspose::Font::Ttf::TtfFont> font, System::SharedPtr<System::Collections::Generic::Dictionary<System::String, uint32_t>> glyphToIndex);
     
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(TtfPostTable, CODEPORTING_ARGS(System::SharedPtr<TtfTableRepository> ttfTables, System::SharedPtr<Aspose::Font::Ttf::TtfFont> font, System::SharedPtr<System::Collections::Generic::Dictionary<System::String, uint32_t>> glyphToIndex));
     ASPOSE_FONT_SHARED_API void Load(System::SharedPtr<Aspose::Font::Ttf::Internals::Parsing::TTFFileReader> ttfReader) override;
     ASPOSE_FONT_SHARED_API void LazyLoadImpl(System::SharedPtr<Aspose::Font::Ttf::Internals::Parsing::TTFFileReader> ttfReader) override;
     ASPOSE_FONT_SHARED_API void Save(System::ArrayPtr<uint8_t>& tableBytes, uint32_t& length, uint32_t& checksum) override;

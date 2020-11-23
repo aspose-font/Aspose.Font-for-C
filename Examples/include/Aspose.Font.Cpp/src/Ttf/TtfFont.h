@@ -28,6 +28,8 @@ namespace Aspose { namespace Font { namespace Ttf { namespace Validation { class
 namespace Aspose { namespace Font { namespace TtfTables { class TtfCffTable; } } }
 namespace Aspose { namespace Font { namespace TtfTables { class TtfGlyfTable; } } }
 namespace Aspose { namespace Font { namespace TtfTables { class TtfSubsetGlyfTable; } } }
+namespace Aspose { namespace Font { namespace Tests { namespace CommonTests { class TftEditTests; } } } }
+namespace Aspose { namespace Font { namespace Tests { class TestUtils; } } }
 namespace Aspose { namespace Font { namespace Tests { namespace FunctionalTests { class TTFFontValidator; } } } }
 namespace Aspose { namespace Font { namespace Tests { namespace FunctionalTests { class TTF_Bytecode_Tests; } } } }
 namespace Aspose { namespace Font { namespace Tests { namespace FunctionalTests { class TTF_Common; } } } }
@@ -67,7 +69,7 @@ namespace Font {
 namespace Ttf {
 
 /// <summary>
-/// Represents TTF Font.
+/// Represents TrueType Font (TTF).
 /// </summary>
 class ASPOSE_FONT_SHARED_CLASS TtfFont : public Aspose::Font::Font
 {
@@ -77,7 +79,6 @@ class ASPOSE_FONT_SHARED_CLASS TtfFont : public Aspose::Font::Font
     typedef ::System::BaseTypesInfo<BaseType> ThisTypeBaseTypesInfo;
     ASPOSE_FONT_SHARED_RTTI_INFO_DECL();
     
-    FRIEND_FUNCTION_System_MakeObject;
     friend class Aspose::Font::Font;
     friend class Aspose::Font::Otl::AdvancedTypographicTables::OtlGlyphsPositioner;
     friend class Aspose::Font::Otl::AdvancedTypographicTables::TextScriptDetector;
@@ -100,6 +101,8 @@ class ASPOSE_FONT_SHARED_CLASS TtfFont : public Aspose::Font::Font
     friend class Aspose::Font::TtfTables::TtfCffTable;
     friend class Aspose::Font::TtfTables::TtfGlyfTable;
     friend class Aspose::Font::TtfTables::TtfSubsetGlyfTable;
+    friend class Aspose::Font::Tests::CommonTests::TftEditTests;
+    friend class Aspose::Font::Tests::TestUtils;
     friend class Aspose::Font::Tests::FunctionalTests::TTFFontValidator;
     friend class Aspose::Font::Tests::FunctionalTests::TTF_Bytecode_Tests;
     friend class Aspose::Font::Tests::FunctionalTests::TTF_Common;
@@ -129,23 +132,36 @@ public:
     /// </summary>
     ASPOSE_FONT_SHARED_API Aspose::Font::FontType get_FontType() override;
     /// <summary>
-    /// Gets Font family.
+    /// Gets or Sets Font family.
     /// </summary>
     ASPOSE_FONT_SHARED_API System::String get_FontFamily() override;
     /// <summary>
-    /// Gets Font style.
+    /// Gets or Sets Font family.
+    /// </summary>
+    ASPOSE_FONT_SHARED_API void set_FontFamily(System::String value) override;
+    /// <summary>
+    /// Gets or Sets Font style.
     /// This is a raw string value provided by Font file.
     /// </summary>
     ASPOSE_FONT_SHARED_API System::String get_Style() override;
+    /// <summary>
+    /// Gets or Sets Font style.
+    /// This is a raw string value provided by Font file.
+    /// </summary>
+    ASPOSE_FONT_SHARED_API void set_Style(System::String value) override;
     /// <summary>
     /// Gets Font style.
     /// This is a value computed and represented in generalized type.
     /// </summary>
     ASPOSE_FONT_SHARED_API Aspose::Font::FontStyle get_FontStyle() override;
     /// <summary>
-    /// Gets Font name.
+    /// Gets or Sets Font face name.
     /// </summary>
     ASPOSE_FONT_SHARED_API System::String get_FontName() override;
+    /// <summary>
+    /// Gets or Sets Font face name.
+    /// </summary>
+    ASPOSE_FONT_SHARED_API void set_FontName(System::String value) override;
     /// <summary>
     /// Gets Font names.
     /// </summary>
@@ -274,19 +290,6 @@ protected:
     /// </summary>
     virtual ASPOSE_FONT_SHARED_API void set_TtfTables(System::SharedPtr<Aspose::Font::TtfTables::TtfTableRepository> value);
     /// <summary>
-    /// Gets Font family.
-    /// </summary>
-    ASPOSE_FONT_SHARED_API void set_FontFamily(System::String value) override;
-    /// <summary>
-    /// Gets Font style.
-    /// This is a raw string value provided by Font file.
-    /// </summary>
-    ASPOSE_FONT_SHARED_API void set_Style(System::String value) override;
-    /// <summary>
-    /// Gets Font name.
-    /// </summary>
-    ASPOSE_FONT_SHARED_API void set_FontName(System::String value) override;
-    /// <summary>
     /// Gets Font names.
     /// </summary>
     ASPOSE_FONT_SHARED_API void set_FontNames(System::SharedPtr<MultiLanguageString> value) override;
@@ -310,16 +313,41 @@ protected:
     /// </summary>
     /// <param name="baseFont"></param>
     TtfFont(System::SharedPtr<TtfFont> baseFont);
+    
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(TtfFont, CODEPORTING_ARGS(System::SharedPtr<TtfFont> baseFont));
+    
     /// <summary>
     /// Creates empty TTF font object.
     /// </summary>
     TtfFont();
+    
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(TtfFont, CODEPORTING_ARGS());
+    
     /// <summary>
     /// Internal constructor.
     /// A factory should be used to create the font
     /// </summary>
     TtfFont(System::SharedPtr<Aspose::Font::Sources::FontDefinition> fontDefinition, System::SharedPtr<Aspose::Font::TtfTables::TtfTableRepository> ttfTables);
     
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(TtfFont, CODEPORTING_ARGS(System::SharedPtr<Aspose::Font::Sources::FontDefinition> fontDefinition, System::SharedPtr<Aspose::Font::TtfTables::TtfTableRepository> ttfTables));
+    /// <summary>
+    /// Internal Font family setter.
+    /// </summary>
+    /// <param name="value">New Font family.</param>
+    /// <param name="isModifiedTable">Modified table flag.</param>
+    void SetFontFamilyInternally(System::String value, bool isModifiedTable = false);
+    /// <summary>
+    /// Internal Style setter.
+    /// </summary>
+    /// <param name="value">New style.</param>
+    /// <param name="isModifiedTable">Modified table flag.</param>
+    void SetStyleInternally(System::String value, bool isModifiedTable = false);
+    /// <summary>
+    /// Internal Font face name setter.
+    /// </summary>
+    /// <param name="value">New Font face name.</param>
+    /// <param name="isModifiedTable">Modified table flag.</param>
+    void SetFontNameInternally(System::String value, bool isModifiedTable = false);
     /// <summary>
     /// Creates new TTF font.
     /// </summary>
@@ -368,22 +396,22 @@ protected:
     
 private:
 
-    System::SharedPtr<TtfEncoding> fontEncoding;
-    System::SharedPtr<TtfFontMetrics> fontMetrics;
+    System::SharedPtr<TtfEncoding> _fontEncoding;
+    System::SharedPtr<TtfFontMetrics> _fontMetrics;
     System::SharedPtr<Aspose::Font::TtfTables::TtfTableRepository> _ttfTables;
-    System::SharedPtr<Aspose::Font::Sources::FontDefinition> fontDefinition;
-    System::SharedPtr<Aspose::Font::Font> innerCFFFont;
+    System::SharedPtr<Aspose::Font::Sources::FontDefinition> _fontDefinition;
+    System::SharedPtr<Aspose::Font::Font> _innerCFFFont;
     System::SharedPtr<System::Object> initSync;
-    bool cffInitDone;
-    System::String fontName;
-    System::String fontFamily;
-    System::String rawFontStyle;
-    Aspose::Font::FontStyle generalizedFontStyle;
-    System::SharedPtr<MultiLanguageString> fontNames;
-    System::SharedPtr<MultiLanguageString> postscriptNames;
+    bool _cffInitDone;
+    System::String _fontName;
+    System::String _fontFamily;
+    System::String _rawFontStyle;
+    Aspose::Font::FontStyle _generalizedFontStyle;
+    System::SharedPtr<MultiLanguageString> _fontNames;
+    System::SharedPtr<MultiLanguageString> _postscriptNames;
     System::SharedPtr<System::Object> initLock1;
     System::SharedPtr<System::Object> initLock2;
-    System::SharedPtr<System::Collections::Generic::List<System::String>> fontTableNames;
+    System::SharedPtr<System::Collections::Generic::List<System::String>> _fontTableNames;
     System::SharedPtr<System::Collections::Generic::List<System::SharedPtr<Aspose::Font::TtfTables::TTFNonSupportedTable>>> _nonSupportedTables;
     bool _isPdfOpenTypeExtension;
     

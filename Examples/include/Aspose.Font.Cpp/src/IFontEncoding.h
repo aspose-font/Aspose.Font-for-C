@@ -69,9 +69,9 @@ public:
     /// Parameterized decode method.
     /// 
     /// Some font types can have multiple encoding algorithms/maps.
-    /// So, IEncodingParameters interface is used to create concrete font encoding parameters.
+    /// So, <see cref="IEncodingParameters"></see> interface is used to create concrete font encoding parameters.
     /// </summary>
-    /// <param name="parameters">Implementation of <see cref="IEncodingParameters"></see>interface.</param>
+    /// <param name="parameters">Implementation of <see cref="IEncodingParameters"></see> interface.</param>
     /// <param name="charCode">Character code to get glyph identifier for.</param>
     /// <returns>Glyph identifier related to char code passed.</returns>
     virtual System::SharedPtr<Glyphs::GlyphId> DecodeToGidParameterized(System::SharedPtr<IEncodingParameters> parameters, uint32_t charCode) = 0;

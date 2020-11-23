@@ -5,6 +5,7 @@
 #include <system/shared_ptr.h>
 #include <system/object.h>
 #include <system/enum_helpers.h>
+#include <system/details/pointer_collection_helpers.h>
 #include <system/collections/sorted_dictionary.h>
 #include <system/collections/list.h>
 #include <system/collections/dictionary.h>
@@ -49,7 +50,6 @@ private:
     class PointsCollection;
     class PointDefinition;
     
-    FRIEND_FUNCTION_System_MakeObject;
     friend class Aspose::Font::Ttf::TTFFontParser;
     friend class Aspose::Font::TtfRendering::TTFPathDefinition;
     friend class Aspose::Font::Ttf::TtfFont;
@@ -120,6 +120,10 @@ private:
         typedef ::System::BaseTypesInfo<BaseType> ThisTypeBaseTypesInfo;
         RTTI_INFO_DECL();
         
+    public:
+    
+        void SetTemplateWeakPtr(unsigned int argument) override;
+        
     protected:
     
         virtual ~PointsCollection();
@@ -174,8 +178,12 @@ protected:
     static const System::String LowerTag;
     
     TtfGlyfTable(System::SharedPtr<TtfTableRepository> ttfTables, System::SharedPtr<Aspose::Font::Ttf::TtfFont> font);
+    
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(TtfGlyfTable, CODEPORTING_ARGS(System::SharedPtr<TtfTableRepository> ttfTables, System::SharedPtr<Aspose::Font::Ttf::TtfFont> font));
+    
     TtfGlyfTable(System::SharedPtr<Aspose::Font::Ttf::Internals::TtfParserContext> context, uint32_t checkSum, uint32_t offset, uint32_t length);
     
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(TtfGlyfTable, CODEPORTING_ARGS(System::SharedPtr<Aspose::Font::Ttf::Internals::TtfParserContext> context, uint32_t checkSum, uint32_t offset, uint32_t length));
     void GetComponentSubglyphs(int32_t glyphIndex, System::SharedPtr<Aspose::Font::Glyphs::GlyphIdList> glyphIds);
     bool IsGlyphAdded(System::SharedPtr<Aspose::Font::Glyphs::Glyph> glyph);
     uint16_t GetGlyphIndex(System::SharedPtr<Aspose::Font::Glyphs::Glyph> glyph);

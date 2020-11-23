@@ -35,6 +35,7 @@ namespace Aspose { namespace Font { namespace TtfTables { class TtfPostTable; } 
 namespace Aspose { namespace Font { namespace TtfTables { class TtfPrepTable; } } }
 namespace Aspose { namespace Font { namespace TtfTables { class TtfSubsetGlyfTable; } } }
 namespace Aspose { namespace Font { namespace TtfTables { class TtfSubsetLocalTable; } } }
+namespace Aspose { namespace Font { namespace Tests { namespace CommonTests { class TftEditTests; } } } }
 namespace Aspose { namespace Font { namespace Tests { namespace FunctionalTests { class TTF_Bytecode_Tests; } } } }
 namespace Aspose { namespace Font { namespace TtfTables { class TtfTableRepository; } } }
 namespace Aspose { namespace Font { namespace Ttf { namespace Internals { class TtfParserContext; } } } }
@@ -58,7 +59,6 @@ class ASPOSE_FONT_SHARED_CLASS TtfTableBase : public virtual System::Object
     typedef ::System::BaseTypesInfo<BaseType> ThisTypeBaseTypesInfo;
     ASPOSE_FONT_SHARED_RTTI_INFO_DECL();
     
-    FRIEND_FUNCTION_System_MakeObject;
     friend class Aspose::Font::Otl::AdvancedTypographicTables::TtfGdefTable;
     friend class Aspose::Font::Otl::AdvancedTypographicTables::TtfGposSubTableBase;
     friend class Aspose::Font::TtfCMapFormats::TtfCMapFormat4Table;
@@ -85,6 +85,7 @@ class ASPOSE_FONT_SHARED_CLASS TtfTableBase : public virtual System::Object
     friend class Aspose::Font::TtfTables::TtfPrepTable;
     friend class Aspose::Font::TtfTables::TtfSubsetGlyfTable;
     friend class Aspose::Font::TtfTables::TtfSubsetLocalTable;
+    friend class Aspose::Font::Tests::CommonTests::TftEditTests;
     friend class Aspose::Font::Tests::FunctionalTests::TTF_Bytecode_Tests;
     
 public:
@@ -113,6 +114,16 @@ protected:
     /// </summary>
     void set_IsNewFont(bool value);
     /// <summary>
+    /// Indicates data state in current table, if this flag is true - table data was changd and
+    /// needed to be saved.
+    /// </summary>
+    bool get_IsModified() const;
+    /// <summary>
+    /// Indicates data state in current table, if this flag is true - table data was changd and
+    /// needed to be saved.
+    /// </summary>
+    void set_IsModified(bool value);
+    /// <summary>
     /// Gets length of this table in bytes (actual length not padded length).
     /// </summary>
     ASPOSE_FONT_SHARED_API uint32_t get_Length() const;
@@ -123,8 +134,12 @@ protected:
     bool loaded;
     
     TtfTableBase(System::SharedPtr<TtfTableRepository> ttfTables, System::SharedPtr<Aspose::Font::Ttf::TtfFont> font);
+    
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(TtfTableBase, CODEPORTING_ARGS(System::SharedPtr<TtfTableRepository> ttfTables, System::SharedPtr<Aspose::Font::Ttf::TtfFont> font));
+    
     TtfTableBase(System::SharedPtr<Aspose::Font::Ttf::Internals::TtfParserContext> context, uint32_t checkSum, uint32_t offset, uint32_t length);
     
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(TtfTableBase, CODEPORTING_ARGS(System::SharedPtr<Aspose::Font::Ttf::Internals::TtfParserContext> context, uint32_t checkSum, uint32_t offset, uint32_t length));
     void LazyLoad();
     virtual ASPOSE_FONT_SHARED_API void LazyLoadImpl(System::SharedPtr<Aspose::Font::Ttf::Internals::Parsing::TTFFileReader> ttfReader);
     virtual ASPOSE_FONT_SHARED_API bool IsConsistent();
@@ -155,11 +170,12 @@ private:
     /// </summary>
     uint32_t get_CheckSum() const;
     
-    bool isNewFont;
+    bool _isNewFont;
+    bool _isModified;
     /// <summary>
     /// Reference to TTF table repository
     /// </summary>
-    System::SharedPtr<TtfTableRepository> ttfTables;
+    System::WeakPtr<TtfTableRepository> ttfTables;
     /// <summary>
     /// parser context
     /// </summary>

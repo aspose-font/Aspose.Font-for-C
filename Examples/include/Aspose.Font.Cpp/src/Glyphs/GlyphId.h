@@ -15,7 +15,11 @@ namespace Font {
 namespace Glyphs {
 
 /// <summary>
-/// Represents glyph id.
+/// Represents glyph ids, available in the Font.
+/// Glyph id is a unique number for a glyph, which is font type dependent.
+/// For example:
+///    Type1's id is a glyph name, instance of (<see cref="GlyphStringId"></see>) class.
+///    TTF's id is an int index, instance of (<see cref="GlyphUInt32Id"></see>) class.
 /// </summary>
 class ASPOSE_FONT_SHARED_CLASS GlyphId : public System::Object
 {
@@ -25,7 +29,6 @@ class ASPOSE_FONT_SHARED_CLASS GlyphId : public System::Object
     typedef ::System::BaseTypesInfo<BaseType> ThisTypeBaseTypesInfo;
     ASPOSE_FONT_SHARED_RTTI_INFO_DECL();
     
-    FRIEND_FUNCTION_System_MakeObject;
     friend ASPOSE_FONT_SHARED_API bool operator ==(System::SharedPtr<GlyphId> const &obj1, System::SharedPtr<System::Object> const &obj2);
     friend ASPOSE_FONT_SHARED_API bool operator !=(System::SharedPtr<GlyphId> const &obj1, System::SharedPtr<System::Object> const &obj2);
     

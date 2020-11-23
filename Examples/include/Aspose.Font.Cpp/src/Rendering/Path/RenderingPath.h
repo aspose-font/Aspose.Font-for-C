@@ -28,7 +28,6 @@ class ASPOSE_FONT_SHARED_CLASS SegmentPath : public System::ICloneable
     typedef ::System::BaseTypesInfo<BaseType> ThisTypeBaseTypesInfo;
     ASPOSE_FONT_SHARED_RTTI_INFO_DECL();
     
-    FRIEND_FUNCTION_System_MakeObject;
     friend class Aspose::Font::Glyphs::Glyph;
     friend class Aspose::Font::RenderingPath::PathDefinition;
     
@@ -49,6 +48,7 @@ protected:
 
     SegmentPath();
     
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(SegmentPath, CODEPORTING_ARGS());
     ASPOSE_FONT_SHARED_API System::Object::shared_members_type GetSharedMembers() override;
     
 private:

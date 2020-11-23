@@ -17,7 +17,7 @@ namespace Font {
 namespace Rendering {
 
 /// <summary>
-/// Defines a way to draw glyphs.
+/// Defines a outline way to draw glyphs.
 /// </summary>
 class ASPOSE_FONT_SHARED_CLASS IGlyphOutlinePainter : public Aspose::Font::Rendering::IGlyphPainter
 {

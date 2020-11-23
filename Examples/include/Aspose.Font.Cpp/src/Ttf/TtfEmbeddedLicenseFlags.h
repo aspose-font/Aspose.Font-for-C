@@ -1,7 +1,6 @@
 ﻿#pragma once
 // Copyright (c) 2001-2020 Aspose Pty Ltd. All Rights Reserved.
 
-#include <system/shared_ptr.h>
 #include <system/object.h>
 #include <system/enum_helpers.h>
 #include <cstdint>
@@ -28,7 +27,6 @@ class ASPOSE_FONT_SHARED_CLASS LicenseFlags : public System::Object
     typedef ::System::BaseTypesInfo<BaseType> ThisTypeBaseTypesInfo;
     ASPOSE_FONT_SHARED_RTTI_INFO_DECL();
     
-    FRIEND_FUNCTION_System_MakeObject;
     friend class Aspose::Font::Ttf::Utils::TTFUtils;
     friend class Aspose::Font::TtfTables::TtfOs2Table;
     
@@ -93,11 +91,16 @@ protected:
     /// </summary>
     /// <param name="flags">embedding flags</param>
     LicenseFlags(uint16_t flags);
+    
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(LicenseFlags, CODEPORTING_ARGS(uint16_t flags));
+    
     /// <summary>
     /// Constructor
     /// This constructor must be called when no fsType presents in font(no OS/2 table)
     /// </summary>
     LicenseFlags();
+    
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(LicenseFlags, CODEPORTING_ARGS());
     
 private:
 

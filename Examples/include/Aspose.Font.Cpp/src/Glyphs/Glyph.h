@@ -26,7 +26,9 @@ namespace Aspose { namespace Font { namespace Type1 { class Type1Font; } } }
 namespace Aspose { namespace Font { namespace Type1 { namespace PostScriptExtension { class Type1CharStringCommandProcessor; } } } }
 namespace Aspose { namespace Font { namespace Type1 { namespace RenderingExtension { class Type1RenderingContextBuilder; } } } }
 namespace Aspose { namespace Font { namespace Type1 { class Type1FontMetrics; } } }
+namespace Aspose { namespace Font { namespace Tests { class TestUtils; } } }
 namespace Aspose { namespace Font { namespace Tests { namespace FunctionalTests { class TTF_Common; } } } }
+namespace Aspose { namespace Pdf { namespace Engine { namespace CommonData { namespace PageContent { namespace Operators { namespace TextShowing { class ShowTextBase; } } } } } } }
 namespace Aspose { namespace Font { namespace Glyphs { enum class GlyphState; } } }
 namespace Aspose { namespace Font { namespace RenderingPath { class SegmentPath; } } }
 namespace Aspose { namespace Font { class FontBBox; } }
@@ -53,7 +55,6 @@ class ASPOSE_FONT_SHARED_CLASS Glyph : public System::ICloneable
     typedef ::System::BaseTypesInfo<BaseType> ThisTypeBaseTypesInfo;
     ASPOSE_FONT_SHARED_RTTI_INFO_DECL();
     
-    FRIEND_FUNCTION_System_MakeObject;
     friend class Aspose::Font::Glyphs::CompositeGlyph;
     friend class Aspose::Font::Cff::CffFont;
     friend class Aspose::Font::Cff::RenderingExtension::CFFRenderingContextBuilder;
@@ -71,7 +72,9 @@ class ASPOSE_FONT_SHARED_CLASS Glyph : public System::ICloneable
     friend class Aspose::Font::Type1::PostScriptExtension::Type1CharStringCommandProcessor;
     friend class Aspose::Font::Type1::RenderingExtension::Type1RenderingContextBuilder;
     friend class Aspose::Font::Type1::Type1FontMetrics;
+    friend class Aspose::Font::Tests::TestUtils;
     friend class Aspose::Font::Tests::FunctionalTests::TTF_Common;
+    friend class Aspose::Pdf::Engine::CommonData::PageContent::Operators::TextShowing::ShowTextBase;
     
 protected:
 
@@ -227,6 +230,7 @@ protected:
     /// </summary>
     Glyph();
     
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(Glyph, CODEPORTING_ARGS());
     void BuildBBox(System::SharedPtr<FontBBox> bbox);
     /// <summary>
     /// Designed for glyph copy operations. An objective - to be helper as pattern factory

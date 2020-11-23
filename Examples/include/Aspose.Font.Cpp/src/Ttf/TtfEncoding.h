@@ -27,7 +27,6 @@ class ASPOSE_FONT_SHARED_CLASS TtfEncoding : public Aspose::Font::IFontEncoding
     typedef ::System::BaseTypesInfo<BaseType> ThisTypeBaseTypesInfo;
     ASPOSE_FONT_SHARED_RTTI_INFO_DECL();
     
-    FRIEND_FUNCTION_System_MakeObject;
     friend class Aspose::Font::Ttf::TtfFont;
     
 public:
@@ -77,11 +76,12 @@ protected:
 
     TtfEncoding(System::SharedPtr<TtfFont> font);
     
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(TtfEncoding, CODEPORTING_ARGS(System::SharedPtr<TtfFont> font));
     ASPOSE_FONT_SHARED_API System::Object::shared_members_type GetSharedMembers() override;
     
 private:
 
-    System::SharedPtr<TtfFont> font;
+    System::WeakPtr<TtfFont> font;
     System::ArrayPtr<uint32_t> _gidToUnicode;
     
     uint32_t GetGlyphIndexFromUnicodeTable(System::SharedPtr<Aspose::Font::TtfCMapFormats::TtfCMapFormatBaseTable> unicodeTable, uint32_t unicode);

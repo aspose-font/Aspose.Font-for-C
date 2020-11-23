@@ -3,7 +3,6 @@
 
 #include <system/string.h>
 #include <system/shared_ptr.h>
-#include <system/object.h>
 #include <system/array.h>
 #include <cstdint>
 
@@ -42,7 +41,6 @@ class ASPOSE_FONT_SHARED_CLASS TtfMaxpTable : public Aspose::Font::TtfTables::Tt
     typedef ::System::BaseTypesInfo<BaseType> ThisTypeBaseTypesInfo;
     ASPOSE_FONT_SHARED_RTTI_INFO_DECL();
     
-    FRIEND_FUNCTION_System_MakeObject;
     friend class Aspose::Font::Font;
     friend class Aspose::Font::Ttf::TtfFont;
     friend class Aspose::Font::Ttf::TtfFontMetrics;
@@ -164,8 +162,12 @@ protected:
     ASPOSE_FONT_SHARED_API void set_MaxComponentElements(uint16_t value);
     
     TtfMaxpTable(System::SharedPtr<TtfTableRepository> ttfTables, System::SharedPtr<Aspose::Font::Ttf::TtfFont> font);
+    
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(TtfMaxpTable, CODEPORTING_ARGS(System::SharedPtr<TtfTableRepository> ttfTables, System::SharedPtr<Aspose::Font::Ttf::TtfFont> font));
+    
     TtfMaxpTable(System::SharedPtr<Aspose::Font::Ttf::Internals::TtfParserContext> context, uint32_t checkSum, uint32_t offset, uint32_t length);
     
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(TtfMaxpTable, CODEPORTING_ARGS(System::SharedPtr<Aspose::Font::Ttf::Internals::TtfParserContext> context, uint32_t checkSum, uint32_t offset, uint32_t length));
     ASPOSE_FONT_SHARED_API void Load(System::SharedPtr<Aspose::Font::Ttf::Internals::Parsing::TTFFileReader> ttfReader) override;
     ASPOSE_FONT_SHARED_API void Save(System::ArrayPtr<uint8_t>& tableBytes, uint32_t& length, uint32_t& checksum) override;
     

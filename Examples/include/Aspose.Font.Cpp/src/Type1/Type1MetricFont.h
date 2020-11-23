@@ -24,9 +24,10 @@ namespace Type1 {
 ///      not allowed functions throw exception <see cref="Type1NotSupportedException"></see>.
 ///   Other properties (FontName, Weight, Metrics and Encoding) are used from metrics file.
 ///   Note: If metrics file defines Encoding as "FontSpecific", user should provide the specific encoding with following way:
+///     
 ///     <code>
-///        string[] zapfDingbatsEncoding = new string[256] {null, null, ... , "space", "a1", ...};
-///        FontEnvironment.Current.FontSpecificEncodings.RegisterEncoding("ZapfDingbats", zapfDingbatsEncoding);
+///        System::ArrayPtr<System::String> zapfDingbatsEncoding = System::MakeArray<System::String>({nullptr, nullptr, ..., u"space", u"a1", ...});
+///        FontEnvironment::get_Current()->get_FontSpecificEncodings()->RegisterEncoding(u"ZapfDingbats", zapfDingbatsEncoding);
 ///     </code>
 /// </summary>
 class ASPOSE_FONT_SHARED_CLASS Type1MetricFont : public Aspose::Font::Type1::Type1Font
@@ -37,7 +38,6 @@ class ASPOSE_FONT_SHARED_CLASS Type1MetricFont : public Aspose::Font::Type1::Typ
     typedef ::System::BaseTypesInfo<BaseType> ThisTypeBaseTypesInfo;
     ASPOSE_FONT_SHARED_RTTI_INFO_DECL();
     
-    FRIEND_FUNCTION_System_MakeObject;
     friend class Aspose::Font::Type1::Type1FontParser;
     
 public:
@@ -48,9 +48,10 @@ public:
     ///       the encoding is populated automatically
     ///     FontSpecific:
     ///        user should provide the specific encoding with following way:
+    ///           
     ///           <code>
-    ///              string[] zapfDingbatsEncoding = new string[256] {null, null, ... , "space", "a1", ...};
-    ///              FontEnvironment.Current.FontSpecificEncodings.RegisterEncoding("ZapfDingbats", zapfDingbatsEncoding);
+    ///              System::ArrayPtr<System::String> zapfDingbatsEncoding = System::MakeArray<System::String>({nullptr, nullptr, ..., u"space", u"a1", ...});
+    ///              FontEnvironment::get_Current()->get_FontSpecificEncodings()->RegisterEncoding(u"ZapfDingbats", zapfDingbatsEncoding);
     ///           </code>
     /// </summary>
     ASPOSE_FONT_SHARED_API System::SharedPtr<IFontEncoding> get_Encoding() override;
@@ -113,6 +114,8 @@ protected:
     /// A factory should be used to create the font
     /// </summary>
     Type1MetricFont(System::SharedPtr<Aspose::Font::Sources::FontDefinition> fontDefinition);
+    
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(Type1MetricFont, CODEPORTING_ARGS(System::SharedPtr<Aspose::Font::Sources::FontDefinition> fontDefinition));
     
 private:
 

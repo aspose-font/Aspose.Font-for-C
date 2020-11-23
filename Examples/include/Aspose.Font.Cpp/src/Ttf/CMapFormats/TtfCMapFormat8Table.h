@@ -29,7 +29,6 @@ class ASPOSE_FONT_SHARED_CLASS TtfCMapFormat8Table : public Aspose::Font::TtfCMa
     typedef ::System::BaseTypesInfo<BaseType> ThisTypeBaseTypesInfo;
     ASPOSE_FONT_SHARED_RTTI_INFO_DECL();
     
-    FRIEND_FUNCTION_System_MakeObject;
     friend class Aspose::Font::TtfTables::TtfCMapTable;
     
 private:
@@ -65,8 +64,12 @@ public:
 protected:
 
     TtfCMapFormat8Table(System::SharedPtr<Aspose::Font::TtfTables::TtfCMapTable> baseTable);
+    
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(TtfCMapFormat8Table, CODEPORTING_ARGS(System::SharedPtr<Aspose::Font::TtfTables::TtfCMapTable> baseTable));
+    
     TtfCMapFormat8Table(uint16_t platformId, uint16_t platformSpecificId, System::SharedPtr<Aspose::Font::TtfTables::TtfCMapTable> baseTable);
     
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(TtfCMapFormat8Table, CODEPORTING_ARGS(uint16_t platformId, uint16_t platformSpecificId, System::SharedPtr<Aspose::Font::TtfTables::TtfCMapTable> baseTable));
     ASPOSE_FONT_SHARED_API void Load(System::SharedPtr<Aspose::Font::Ttf::Internals::Parsing::TTFFileReader> ttfReader) override;
     ASPOSE_FONT_SHARED_API System::Object::shared_members_type GetSharedMembers() override;
     

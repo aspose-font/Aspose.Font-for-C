@@ -28,7 +28,6 @@ class ASPOSE_FONT_SHARED_CLASS Type1FontMetrics : public Aspose::Font::FontMetri
     typedef ::System::BaseTypesInfo<BaseType> ThisTypeBaseTypesInfo;
     ASPOSE_FONT_SHARED_RTTI_INFO_DECL();
     
-    FRIEND_FUNCTION_System_MakeObject;
     friend class Aspose::Font::Type1::Type1MetricFont;
     friend class Aspose::Font::Type1::Type1Font;
     friend class Aspose::Font::Type1::Type1FontParser;
@@ -172,6 +171,7 @@ protected:
     
     Type1FontMetrics(System::SharedPtr<Type1Font> font);
     
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(Type1FontMetrics, CODEPORTING_ARGS(System::SharedPtr<Type1Font> font));
     /// <summary>
     /// Returns hashcode, based on glyph id type.
     /// </summary>
@@ -180,7 +180,7 @@ protected:
     
 private:
 
-    System::SharedPtr<Type1Font> _font;
+    System::WeakPtr<Type1Font> _font;
     uint32_t unitsPerEM;
     System::SharedPtr<Aspose::Font::FontBBox> fontBBox;
     System::SharedPtr<TransformationMatrix> _fontTransformationMatrix;

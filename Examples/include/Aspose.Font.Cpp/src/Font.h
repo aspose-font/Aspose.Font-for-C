@@ -52,7 +52,6 @@ class ASPOSE_FONT_SHARED_CLASS Font : public virtual Aspose::Font::IFont, public
     typedef ::System::BaseTypesInfo<BaseType, BaseType1, BaseType2> ThisTypeBaseTypesInfo;
     ASPOSE_FONT_SHARED_RTTI_INFO_DECL();
     
-    FRIEND_FUNCTION_System_MakeObject;
     friend class Aspose::Font::Ttf::TTFFontParser;
     friend class Aspose::Font::Type1::PostScriptExtension::Type1CharStringCommandProcessor;
     friend class Aspose::Font::Tests::FunctionalTests::Common_JavaPorting;
@@ -73,23 +72,36 @@ public:
     /// </summary>
     ASPOSE_FONT_SHARED_API Aspose::Font::FontType get_FontType() override = 0;
     /// <summary>
-    /// Gets Font style.
+    /// Gets or Sets Font style.
     /// This is a raw string value provided by Font file.
     /// </summary>
     ASPOSE_FONT_SHARED_API System::String get_Style() override = 0;
+    /// <summary>
+    /// Gets or Sets Font style.
+    /// This is a raw string value provided by Font file.
+    /// </summary>
+    ASPOSE_FONT_SHARED_API void set_Style(System::String value) override = 0;
     /// <summary>
     /// Gets Font style.
     /// This is a value computed and represented in generalized type.
     /// </summary>
     ASPOSE_FONT_SHARED_API Aspose::Font::FontStyle get_FontStyle() override = 0;
     /// <summary>
-    /// Gets Font family.
+    /// Gets or Sets Font family.
     /// </summary>
     ASPOSE_FONT_SHARED_API System::String get_FontFamily() override = 0;
     /// <summary>
-    /// Gets Font name.
+    /// Gets or Sets Font family.
+    /// </summary>
+    ASPOSE_FONT_SHARED_API void set_FontFamily(System::String value) override = 0;
+    /// <summary>
+    /// Gets or Sets Font face name.
     /// </summary>
     ASPOSE_FONT_SHARED_API System::String get_FontName() override = 0;
+    /// <summary>
+    /// Gets or Sets Font face name.
+    /// </summary>
+    ASPOSE_FONT_SHARED_API void set_FontName(System::String value) override = 0;
     /// <summary>
     /// Gets Font names.
     /// </summary>
@@ -208,19 +220,6 @@ public:
     
 protected:
 
-    /// <summary>
-    /// Gets Font style.
-    /// This is a raw string value provided by Font file.
-    /// </summary>
-    virtual ASPOSE_FONT_SHARED_API void set_Style(System::String value) = 0;
-    /// <summary>
-    /// Gets Font family.
-    /// </summary>
-    virtual ASPOSE_FONT_SHARED_API void set_FontFamily(System::String value) = 0;
-    /// <summary>
-    /// Gets Font name.
-    /// </summary>
-    virtual ASPOSE_FONT_SHARED_API void set_FontName(System::String value) = 0;
     /// <summary>
     /// Gets Font names.
     /// </summary>

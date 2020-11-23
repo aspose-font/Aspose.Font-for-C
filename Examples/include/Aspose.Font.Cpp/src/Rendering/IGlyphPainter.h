@@ -26,7 +26,7 @@ class ASPOSE_FONT_SHARED_CLASS IGlyphPainter : public System::Object
 };
 
 /// <summary>
-/// Defines a way to draw glyphs.
+/// Defines a raster way to draw glyphs.
 /// </summary>
 class IGlyphRasterPainter : public Aspose::Font::Rendering::IGlyphPainter
 {

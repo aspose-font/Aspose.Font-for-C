@@ -26,8 +26,6 @@ class ASPOSE_FONT_SHARED_CLASS FileSystemStreamSource : public Aspose::Font::Sou
     typedef ::System::BaseTypesInfo<BaseType> ThisTypeBaseTypesInfo;
     ASPOSE_FONT_SHARED_RTTI_INFO_DECL();
     
-    FRIEND_FUNCTION_System_MakeObject;
-    
 public:
 
     /// <summary>
@@ -65,6 +63,8 @@ private:
     /// for serialization
     /// </summary>
     FileSystemStreamSource();
+    
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(FileSystemStreamSource, CODEPORTING_ARGS());
     
 };
 

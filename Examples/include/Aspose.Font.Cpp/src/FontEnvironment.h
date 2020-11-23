@@ -29,7 +29,6 @@ class ASPOSE_FONT_SHARED_CLASS FontEnvironment : public System::Object
     typedef ::System::BaseTypesInfo<BaseType> ThisTypeBaseTypesInfo;
     ASPOSE_FONT_SHARED_RTTI_INFO_DECL();
     
-    FRIEND_FUNCTION_System_MakeObject;
     friend class Aspose::Font::License;
     friend class Aspose::Font::Ttf::TTFFontParser;
     
@@ -101,7 +100,7 @@ public:
     ASPOSE_FONT_SHARED_API void set_Strictness(FontEnvironment::ParsingStrictness value);
     /// <summary>
     /// Stores specific encodings for consumer-aware Fonts.
-    /// for example, PDF uses Adobo Symbol and ZapfDingbats specific encodings.
+    /// For example, PDF documents uses Adobe Symbol and ZapfDingbats specific encodings.
     /// </summary>
     ASPOSE_FONT_SHARED_API System::SharedPtr<Aspose::Font::Type1::FontSpecificEncodings> get_FontSpecificEncodings() const;
     
@@ -112,6 +111,7 @@ protected:
     /// </summary>
     FontEnvironment();
     
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(FontEnvironment, CODEPORTING_ARGS());
     static void ResetLicensed();
     void CheckFontNameAboutLicense(System::String fontName);
     ASPOSE_FONT_SHARED_API System::Object::shared_members_type GetSharedMembers() override;

@@ -3,7 +3,6 @@
 
 #include <system/string.h>
 #include <system/shared_ptr.h>
-#include <system/object.h>
 #include <system/collections/dictionary.h>
 #include <cstdint>
 
@@ -38,7 +37,6 @@ class ASPOSE_FONT_SHARED_CLASS FontMetrics : public Aspose::Font::IFontMetrics
     typedef ::System::BaseTypesInfo<BaseType> ThisTypeBaseTypesInfo;
     ASPOSE_FONT_SHARED_RTTI_INFO_DECL();
     
-    FRIEND_FUNCTION_System_MakeObject;
     friend class Aspose::Font::Ttf::TtfFontMetrics;
     friend class Aspose::Font::TtfTables::TtfKernTable;
     friend class Aspose::Font::Type1::Type1FontParser;

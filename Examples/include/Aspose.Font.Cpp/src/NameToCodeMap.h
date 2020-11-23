@@ -2,7 +2,6 @@
 // Copyright (c) 2001-2020 Aspose Pty Ltd. All Rights Reserved.
 
 #include <system/string.h>
-#include <system/shared_ptr.h>
 #include <system/object.h>
 #include <system/collections/dictionary.h>
 #include <cstdint>
@@ -27,7 +26,6 @@ class ASPOSE_FONT_SHARED_CLASS NameToCodeMap : public System::Object
     typedef ::System::BaseTypesInfo<BaseType> ThisTypeBaseTypesInfo;
     ASPOSE_FONT_SHARED_RTTI_INFO_DECL();
     
-    FRIEND_FUNCTION_System_MakeObject;
     friend class Aspose::Font::Cff::CffEncoding;
     friend class Aspose::Font::Type1::Type1Encoding;
     
@@ -61,6 +59,8 @@ protected:
     /// internal ctor
     /// </summary>
     NameToCodeMap();
+    
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(NameToCodeMap, CODEPORTING_ARGS());
     
     /// <summary>
     /// Gets code by name.

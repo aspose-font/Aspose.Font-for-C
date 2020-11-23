@@ -6,6 +6,7 @@
 #include <system/object.h>
 #include <system/eventhandler.h>
 #include <system/eventargs.h>
+#include <system/details/pointer_collection_helpers.h>
 #include <system/collections/sorted_list.h>
 #include <system/collections/list.h>
 #include <system/collections/icomparer.h>
@@ -18,6 +19,7 @@
 
 namespace Aspose { namespace Font { namespace Ttf { class TTFFontDefinitionParser; } } }
 namespace Aspose { namespace Font { namespace Ttf { class TtfFont; } } }
+namespace Aspose { namespace Font { namespace Tests { namespace CommonTests { class TftEditTests; } } } }
 namespace Aspose { namespace Page { namespace EPS { namespace GraphicsIO { namespace Aps { class FontConverter; } } } } }
 namespace Aspose { namespace Page { namespace EPS { namespace Postscript { class DefineFont; } } } }
 namespace Aspose { namespace Pdf { namespace Engine { namespace CommonData { namespace PageContent { namespace Operators { namespace TextShowing { class ShowTextBase; } } } } } } }
@@ -48,9 +50,9 @@ private:
 
     class NameRecordComparer;
     
-    FRIEND_FUNCTION_System_MakeObject;
     friend class Aspose::Font::Ttf::TTFFontDefinitionParser;
     friend class Aspose::Font::Ttf::TtfFont;
+    friend class Aspose::Font::Tests::CommonTests::TftEditTests;
     friend class Aspose::Page::EPS::GraphicsIO::Aps::FontConverter;
     friend class Aspose::Page::EPS::Postscript::DefineFont;
     friend class Aspose::Pdf::Engine::CommonData::PageContent::Operators::TextShowing::ShowTextBase;
@@ -915,6 +917,7 @@ protected:
         uint16_t languageId;
         uint16_t nameId;
         System::String storedString;
+        System::String encoding;
         
         NameRecord();
         
@@ -958,6 +961,7 @@ private:
         void Add(System::SharedPtr<TtfNameTable::NameRecord> const &nr);
         bool Contains(System::SharedPtr<TtfNameTable::NameRecord> const &nr) const;
         void Remove(System::SharedPtr<TtfNameTable::NameRecord> nr);
+        void SetTemplateWeakPtr(unsigned int argument) override;
         
     protected:
     
@@ -1015,16 +1019,20 @@ protected:
     static const System::String TAG;
     static const System::String LowerTag;
     
+    System::EventHandler<> NameChanged;
+    
     /// <summary>
     /// Initializes a new instance of the <see cref="TtfNameTable"></see> class.
     /// </summary>
     /// <param name="ttfTables">TTF tables repository.</param>
     /// <param name="font">TTF Font.</param>
     TtfNameTable(System::SharedPtr<TtfTableRepository> ttfTables, System::SharedPtr<Aspose::Font::Ttf::TtfFont> font);
+    
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(TtfNameTable, CODEPORTING_ARGS(System::SharedPtr<TtfTableRepository> ttfTables, System::SharedPtr<Aspose::Font::Ttf::TtfFont> font));
+    
     TtfNameTable(System::SharedPtr<Aspose::Font::Ttf::Internals::TtfParserContext> context, uint32_t checkSum, uint32_t offset, uint32_t length);
     
-    System::EventHandler<> NameChanged;
-    
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(TtfNameTable, CODEPORTING_ARGS(System::SharedPtr<Aspose::Font::Ttf::Internals::TtfParserContext> context, uint32_t checkSum, uint32_t offset, uint32_t length));
     ASPOSE_FONT_SHARED_API void Load(System::SharedPtr<Aspose::Font::Ttf::Internals::Parsing::TTFFileReader> ttfReader) override;
     ASPOSE_FONT_SHARED_API void Save(System::ArrayPtr<uint8_t>& tableBytes, uint32_t& length, uint32_t& checksum) override;
     /// <summary>
@@ -1041,8 +1049,11 @@ protected:
 private:
 
     System::SharedPtr<TtfNameTable::NameRecordList> _nameRecords;
-    System::SharedPtr<System::Collections::Generic::Dictionary<uint16_t, System::SharedPtr<System::Collections::Generic::List<System::SharedPtr<TtfNameTable::NameRecord>>>>> nameIDMap;
+    System::SharedPtr<System::Collections::Generic::Dictionary<uint16_t, System::SharedPtr<System::Collections::Generic::List<System::SharedPtr<TtfNameTable::NameRecord>>>>> _nameIDMap;
     
+    void SaveData(System::ArrayPtr<uint8_t>& tableBytes, uint32_t& length, uint32_t& checksum);
+    bool GetEncodingForNameRecord(System::SharedPtr<TtfNameTable::NameRecord> nr);
+    void AddFontNamesForNewFont();
     void AddMSName(int32_t nameId, System::String storedString, bool replaceIfExists);
     void AddMacName(int32_t nameId, System::String storedString, bool replaceIfExists);
     void AddName(int32_t languageId, int32_t nameId, int32_t platformId, int32_t platformSpecificId, System::String storedString, bool replaceIfExists);

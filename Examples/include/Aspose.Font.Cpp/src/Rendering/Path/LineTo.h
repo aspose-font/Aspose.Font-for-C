@@ -14,6 +14,7 @@ namespace Aspose { namespace Font { namespace TtfRendering { class TTFPathDefini
 namespace Aspose { namespace Font { namespace Ttf { class TtfFont; } } }
 namespace Aspose { namespace Font { namespace TtfTables { class TtfGlyfTable; } } }
 namespace Aspose { namespace Font { namespace Type1 { namespace RenderingExtension { class Type1RenderingContextBuilder; } } } }
+namespace Aspose { namespace Font { namespace Tests { class TestUtils; } } }
 namespace Aspose { namespace Font { namespace Rendering { namespace Hinting { class HintCollection; } } } }
 namespace Aspose { namespace Font { class TransformationMatrix; } }
 
@@ -34,7 +35,6 @@ class ASPOSE_FONT_SHARED_CLASS LineTo : public Aspose::Font::RenderingPath::IPat
     typedef ::System::BaseTypesInfo<BaseType> ThisTypeBaseTypesInfo;
     ASPOSE_FONT_SHARED_RTTI_INFO_DECL();
     
-    FRIEND_FUNCTION_System_MakeObject;
     friend class Aspose::Font::Utils::GlyphPathUtils;
     friend class Aspose::Font::Glyphs::Glyph;
     friend class Aspose::Font::Vectorizer::LineVectorizer;
@@ -44,6 +44,7 @@ class ASPOSE_FONT_SHARED_CLASS LineTo : public Aspose::Font::RenderingPath::IPat
     friend class Aspose::Font::Ttf::TtfFont;
     friend class Aspose::Font::TtfTables::TtfGlyfTable;
     friend class Aspose::Font::Type1::RenderingExtension::Type1RenderingContextBuilder;
+    friend class Aspose::Font::Tests::TestUtils;
     
 public:
 
@@ -101,6 +102,7 @@ protected:
     /// <param name="y">Coordinate y.</param>
     LineTo(double x, double y);
     
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(LineTo, CODEPORTING_ARGS(double x, double y));
     ASPOSE_FONT_SHARED_API System::Object::shared_members_type GetSharedMembers() override;
     
 private:

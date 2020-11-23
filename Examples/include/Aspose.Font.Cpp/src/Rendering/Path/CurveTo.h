@@ -35,7 +35,6 @@ class ASPOSE_FONT_SHARED_CLASS CurveTo : public Aspose::Font::RenderingPath::IPa
     typedef ::System::BaseTypesInfo<BaseType> ThisTypeBaseTypesInfo;
     ASPOSE_FONT_SHARED_RTTI_INFO_DECL();
     
-    FRIEND_FUNCTION_System_MakeObject;
     friend class Aspose::Font::Utils::GlyphPathUtils;
     friend class Aspose::Font::Glyphs::Glyph;
     friend class Aspose::Font::Cff::RenderingExtension::CFFRenderingContextBuilder;
@@ -136,6 +135,7 @@ protected:
     /// <param name="y3">Coordinate y3.</param>
     CurveTo(double x1, double y1, double x2, double y2, double x3, double y3);
     
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(CurveTo, CODEPORTING_ARGS(double x1, double y1, double x2, double y2, double x3, double y3));
     ASPOSE_FONT_SHARED_API System::Object::shared_members_type GetSharedMembers() override;
     
 private:

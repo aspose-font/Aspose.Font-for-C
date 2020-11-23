@@ -30,7 +30,6 @@ class ASPOSE_FONT_SHARED_CLASS CompositeGlyph : public Aspose::Font::Glyphs::Gly
     typedef ::System::BaseTypesInfo<BaseType> ThisTypeBaseTypesInfo;
     ASPOSE_FONT_SHARED_RTTI_INFO_DECL();
     
-    FRIEND_FUNCTION_System_MakeObject;
     friend class Aspose::Font::Ttf::TTFFontParser;
     friend class Aspose::Font::TtfTables::TtfGlyfTable;
     friend class Aspose::Font::Tests::FunctionalTests::TTF_Common;
@@ -64,6 +63,7 @@ protected:
     /// </summary>
     CompositeGlyph();
     
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(CompositeGlyph, CODEPORTING_ARGS());
     /// <summary>
     /// Returns flat glyph made from the composite one.
     /// </summary>

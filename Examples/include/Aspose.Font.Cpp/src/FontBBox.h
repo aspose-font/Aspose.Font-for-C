@@ -1,7 +1,6 @@
 ﻿#pragma once
 // Copyright (c) 2001-2020 Aspose Pty Ltd. All Rights Reserved.
 
-#include <system/shared_ptr.h>
 #include <system/object.h>
 
 #include "Aspose.Font.Cpp/aspose_font_api_defs.h"
@@ -13,6 +12,7 @@ namespace Aspose { namespace Font { namespace Ttf { class TtfFontMetrics; } } }
 namespace Aspose { namespace Font { namespace TtfTables { class TtfGlyfTable; } } }
 namespace Aspose { namespace Font { namespace Type1 { class Type1FontMetrics; } } }
 namespace Aspose { namespace Font { namespace Type1 { class Type1FontParser; } } }
+namespace Aspose { namespace Font { namespace Tests { namespace BaseTesting { class BaseFunctionalTests; } } } }
 
 namespace Aspose {
 
@@ -29,7 +29,6 @@ class ASPOSE_FONT_SHARED_CLASS FontBBox : public System::Object
     typedef ::System::BaseTypesInfo<BaseType> ThisTypeBaseTypesInfo;
     ASPOSE_FONT_SHARED_RTTI_INFO_DECL();
     
-    FRIEND_FUNCTION_System_MakeObject;
     friend class Aspose::Font::Glyphs::Glyph;
     friend class Aspose::Font::Cff::Internals::CFFFontDictionary;
     friend class Aspose::Font::Cff::PostScriptExtension::CFFDictCommandProcessor;
@@ -37,6 +36,7 @@ class ASPOSE_FONT_SHARED_CLASS FontBBox : public System::Object
     friend class Aspose::Font::TtfTables::TtfGlyfTable;
     friend class Aspose::Font::Type1::Type1FontMetrics;
     friend class Aspose::Font::Type1::Type1FontParser;
+    friend class Aspose::Font::Tests::BaseTesting::BaseFunctionalTests;
     
 public:
 
@@ -63,6 +63,9 @@ protected:
     /// Initializes new <see cref="FontBBox"></see> object.
     /// </summary>
     FontBBox();
+    
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(FontBBox, CODEPORTING_ARGS());
+    
     /// <summary>
     /// Initializes new <see cref="FontBBox"></see> object.
     /// </summary>
@@ -72,6 +75,7 @@ protected:
     /// <param name="yMax">yMax value</param>
     FontBBox(double xMin, double yMin, double xMax, double yMax);
     
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(FontBBox, CODEPORTING_ARGS(double xMin, double yMin, double xMax, double yMax));
     void SetXMin(double value);
     void SetYMin(double value);
     void SetXMax(double value);

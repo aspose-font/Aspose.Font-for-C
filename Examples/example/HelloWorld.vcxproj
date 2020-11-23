@@ -105,5 +105,5 @@
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />
   <Import Project="..\aspose.font.cpp.targets" />
-  <Import Project="..\CodePorting.Native.Cs2Cpp_vc14_20.8\CodePorting.Native.Cs2Cpp.API.targets" />
+  <Import Project="..\CodePorting.Native.Cs2Cpp_vc14_20.11\CodePorting.Native.Cs2Cpp.API.targets" />
 </Project>

@@ -26,7 +26,6 @@ class ASPOSE_FONT_SHARED_CLASS CffFontMetrics : public Aspose::Font::FontMetrics
     typedef ::System::BaseTypesInfo<BaseType> ThisTypeBaseTypesInfo;
     ASPOSE_FONT_SHARED_RTTI_INFO_DECL();
     
-    FRIEND_FUNCTION_System_MakeObject;
     friend class Aspose::Font::Cff::CffFont;
     friend class Aspose::Font::Tests::FunctionalTests::CFF_Common;
     
@@ -78,12 +77,13 @@ protected:
 
     CffFontMetrics(System::SharedPtr<CffFont> font);
     
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(CffFontMetrics, CODEPORTING_ARGS(System::SharedPtr<CffFont> font));
     ASPOSE_FONT_SHARED_API int32_t GetGlyphIdHashCode(System::SharedPtr<Aspose::Font::Glyphs::GlyphId> glyphId) override;
     ASPOSE_FONT_SHARED_API System::Object::shared_members_type GetSharedMembers() override;
     
 private:
 
-    System::SharedPtr<CffFont> _font;
+    System::WeakPtr<CffFont> _font;
     uint32_t unitsPerEM;
     System::SharedPtr<System::Object> initSync;
     

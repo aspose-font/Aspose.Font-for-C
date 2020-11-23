@@ -36,7 +36,6 @@ class ASPOSE_FONT_SHARED_CLASS ClosePath : public Aspose::Font::RenderingPath::I
     typedef ::System::BaseTypesInfo<BaseType> ThisTypeBaseTypesInfo;
     ASPOSE_FONT_SHARED_RTTI_INFO_DECL();
     
-    FRIEND_FUNCTION_System_MakeObject;
     friend class Aspose::Font::Utils::GlyphPathUtils;
     friend class Aspose::Font::Glyphs::Glyph;
     friend class Aspose::Font::Vectorizer::LineVectorizer;
@@ -102,6 +101,7 @@ protected:
     /// <param name="y">Coordinate y.</param>
     ClosePath(double x, double y);
     
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(ClosePath, CODEPORTING_ARGS(double x, double y));
     ASPOSE_FONT_SHARED_API System::Object::shared_members_type GetSharedMembers() override;
     
 private:

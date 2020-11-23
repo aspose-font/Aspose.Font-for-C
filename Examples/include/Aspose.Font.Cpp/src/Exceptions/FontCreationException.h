@@ -24,8 +24,8 @@ class ASPOSE_FONT_SHARED_CLASS Details_FontCreationException : public Aspose::Fo
     typedef ::System::BaseTypesInfo<BaseType> ThisTypeBaseTypesInfo;
     ASPOSE_FONT_SHARED_RTTI_INFO_DECL();
     
-    FRIEND_FUNCTION_System_MakeObject;
     friend class System::ExceptionWrapperHelper;
+    template <typename T> friend class System::ExceptionWrapper;
     
 protected:
 
@@ -35,23 +35,34 @@ protected:
     /// Initializes new <see cref="FontCreationException"></see> object.
     /// </summary>
     ASPOSE_FONT_SHARED_API Details_FontCreationException();
+    
+    ASPOSE_FONT_SHARED_API MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(Details_FontCreationException, CODEPORTING_ARGS());
+    
     /// <summary>
     /// Initializes new <see cref="FontCreationException"></see> object.
     /// </summary>
     /// <param name="message">A message that describes the error.</param>
     ASPOSE_FONT_SHARED_API Details_FontCreationException(System::String message);
+    
+    ASPOSE_FONT_SHARED_API MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(Details_FontCreationException, CODEPORTING_ARGS(System::String message));
+    
     /// <summary>
     /// Initializes new <see cref="FontCreationException"></see> object.
     /// </summary>
     /// <param name="message">A message that describes the error.</param>
     /// <param name="innerException">The exception that is the cause of the current exception.</param>
     ASPOSE_FONT_SHARED_API Details_FontCreationException(System::String message, System::Exception innerException);
+    
+    ASPOSE_FONT_SHARED_API MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(Details_FontCreationException, CODEPORTING_ARGS(System::String message, System::Exception innerException));
+    
     /// <summary>
     /// Initializes new <see cref="FontCreationException"></see> object.
     /// </summary>
     /// <param name="info">The object that holds the serialized object data.</param>
     /// <param name="context">The contextual information about the source or destination.</param>
     ASPOSE_FONT_SHARED_API Details_FontCreationException(System::SharedPtr<System::Runtime::Serialization::SerializationInfo> info, System::Runtime::Serialization::StreamingContext context);
+    
+    ASPOSE_FONT_SHARED_API MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(Details_FontCreationException, CODEPORTING_ARGS(System::SharedPtr<System::Runtime::Serialization::SerializationInfo> info, System::Runtime::Serialization::StreamingContext context));
     
 };
 

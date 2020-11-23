@@ -2,7 +2,6 @@
 // Copyright (c) 2001-2020 Aspose Pty Ltd. All Rights Reserved.
 
 #include <system/shared_ptr.h>
-#include <system/object.h>
 #include <cstdint>
 
 #include "Aspose.Font.Cpp/src/Rendering/Renderers/IGlyphRenderer.h"
@@ -32,7 +31,6 @@ class ASPOSE_FONT_SHARED_CLASS GlyphRendererBase : public Aspose::Font::Renderer
     typedef ::System::BaseTypesInfo<BaseType> ThisTypeBaseTypesInfo;
     ASPOSE_FONT_SHARED_RTTI_INFO_DECL();
     
-    FRIEND_FUNCTION_System_MakeObject;
     friend class Aspose::Font::Renderers::GlyphOutlineRenderer;
     
 public:

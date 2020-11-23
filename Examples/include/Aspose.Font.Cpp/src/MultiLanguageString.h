@@ -35,7 +35,6 @@ class ASPOSE_FONT_SHARED_CLASS MultiLanguageString : public System::Object
     typedef ::System::BaseTypesInfo<BaseType> ThisTypeBaseTypesInfo;
     ASPOSE_FONT_SHARED_RTTI_INFO_DECL();
     
-    FRIEND_FUNCTION_System_MakeObject;
     friend class Aspose::Font::Sources::FontDefinition;
     friend class Aspose::Font::Cff::CffFont;
     friend class Aspose::Font::Ttf::PCLFontDefinition;
@@ -117,12 +116,16 @@ protected:
     /// Creates empty multi language string.
     /// </summary>
     MultiLanguageString();
+    
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(MultiLanguageString, CODEPORTING_ARGS());
+    
     /// <summary>
     /// Creates multi language string with english string inside.
     /// </summary>
     /// <param name="str">string to add </param>
     MultiLanguageString(System::String str);
     
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(MultiLanguageString, CODEPORTING_ARGS(System::String str));
     /// <summary>
     /// Adds string of specific language
     /// </summary>

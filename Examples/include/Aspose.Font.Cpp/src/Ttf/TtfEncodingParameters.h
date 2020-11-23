@@ -47,7 +47,7 @@ public:
     /// Initializes new instance of TtfEncodingParameters class.
     /// Takes Platform Id, Platform-specific encoding id as parameters.
     /// These parameters used to request special CMap subtable from main font CMap table,
-    /// see tables CMap, name in OpenType Font File specification.
+    /// see table 'CMap', 'name' in OpenType Font File specification.
     /// </summary>
     /// <param name="platformId">Platform id.</param>
     /// <param name="platformSpecificId">Platform-specific encoding id.</param>

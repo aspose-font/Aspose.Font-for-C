@@ -21,7 +21,6 @@ class ASPOSE_FONT_SHARED_CLASS GlyphUInt32Id : public Aspose::Font::Glyphs::Glyp
     typedef ::System::BaseTypesInfo<BaseType> ThisTypeBaseTypesInfo;
     ASPOSE_FONT_SHARED_RTTI_INFO_DECL();
     
-    FRIEND_FUNCTION_System_MakeObject;
     friend ASPOSE_FONT_SHARED_API bool operator ==(System::SharedPtr<GlyphUInt32Id> const &obj1, System::SharedPtr<System::Object> const &obj2);
     friend ASPOSE_FONT_SHARED_API bool operator !=(System::SharedPtr<GlyphUInt32Id> const &obj1, System::SharedPtr<System::Object> const &obj2);
     
@@ -69,8 +68,7 @@ private:
     /// <summary>
     /// Notdef value.
     /// </summary>
-    static System::SharedPtr<GlyphUInt32Id>& notDefId();
-    
+    static System::SharedPtr<GlyphUInt32Id> notDefId;
     uint32_t value;
     
     static struct __StaticConstructor__ { __StaticConstructor__(); } s_constructor__;

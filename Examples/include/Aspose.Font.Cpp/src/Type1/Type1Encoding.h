@@ -32,7 +32,6 @@ class ASPOSE_FONT_SHARED_CLASS Type1Encoding : public Aspose::Font::IFontEncodin
     typedef ::System::BaseTypesInfo<BaseType, BaseType1> ThisTypeBaseTypesInfo;
     ASPOSE_FONT_SHARED_RTTI_INFO_DECL();
     
-    FRIEND_FUNCTION_System_MakeObject;
     friend class Aspose::Font::Type1::Type1Font;
     friend class Aspose::Font::Type1::Type1FontParser;
     friend class Aspose::Font::Tests::FunctionalTests::Type1_Common;
@@ -101,12 +100,13 @@ protected:
     
     Type1Encoding(System::SharedPtr<Type1Font> font);
     
+    MEMBER_FUNCTION_MAKE_OBJECT_DECLARATION(Type1Encoding, CODEPORTING_ARGS(System::SharedPtr<Type1Font> font));
     ASPOSE_FONT_SHARED_API System::Object::shared_members_type GetSharedMembers() override;
     
 private:
 
     System::SharedPtr<NameToCodeMap> nameToCodeIndex;
-    System::SharedPtr<Type1Font> font;
+    System::WeakPtr<Type1Font> font;
     System::SharedPtr<Aspose::Font::Type1::Internals::EncodingArray> _encodingArray;
     System::SharedPtr<IUnicodeList> _unicodeList;
     System::SharedPtr<System::Object> _initLock;
