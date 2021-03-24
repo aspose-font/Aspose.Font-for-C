@@ -3,3 +3,4 @@
 *.exe
 Debug
 *_out.*
+*.lic
