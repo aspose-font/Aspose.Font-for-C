@@ -77,5 +77,5 @@ else
 }
 ```
 
-[Home](https://www.aspose.com/) | [Product Page](https://products.aspose.com/font/cpp) | [Docs](https://docs.aspose.com/font/cpp/) | [API Reference](https://apireference.aspose.com/font/cpp) | [Examples](https://github.com/aspose-font/Aspose.Font-for-C/tree/master/Examples) | [Blog](https://blog.aspose.com/category/font/) | [Free Support](https://forum.aspose.com/c/font) | [Temporary License](https://purchase.aspose.com/temporary-license)
+[Home](https://www.aspose.com/) | [Product Page](https://products.aspose.com/font/cpp) | [Docs](https://docs.aspose.com/font/cpp/) | [API Reference](https://apireference.aspose.com/font/cpp) | [Examples](https://github.com/aspose-font/Aspose.Font-for-C/tree/master/Examples) | [Blog](https://blog.aspose.com/category/font/) | [Search](https://search.aspose.com/) | [Free Support](https://forum.aspose.com/c/font) | [Temporary License](https://purchase.aspose.com/temporary-license)
 
